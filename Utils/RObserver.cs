@@ -23,7 +23,10 @@ namespace _4RTools.Utils
         TURN_OFF,
         SHUTDOWN_APPLICATION,
         CLICK_ICON_TRAY,
-        SERVER_LIST_CHANGED
+        SERVER_LIST_CHANGED,
+        CITY_ENTERED,
+        CITY_EXITED,
+        CHAT_MESSAGE_RECEIVED
     }
 
     public class Message

@@ -37,7 +37,11 @@ namespace _4RTools.Forms
             SetSongMacroWindow();
             SetATKDEFWindow();
             SetMacroSwitchWindow();
+            SetMacroAutoSettingsWindow();
             SetServerWindow();
+
+            // Initialize MacroAutoController
+            MacroAutoControllerSingleton.Instance(this.subject);
 
             TrackerSingleton.Instance().SendEvent("desktop_login", "page_view", "desktop_container_load");
         }
@@ -173,12 +177,15 @@ namespace _4RTools.Forms
                 case MessageCode.TURN_OFF:
                     this.profileCB.Enabled = true;
                     this.processCB.Enabled = true;
-
+                    // Stop macro auto controller monitoring
+                    MacroAutoControllerSingleton.GetInstance()?.StopMonitoring();
                     break;
                 case MessageCode.TURN_ON:
                     this.profileCB.Enabled = false;
                     this.processCB.Enabled = false;
                     this.characterName.Text = ClientSingleton.GetClient().ReadCharacterName();
+                    // Start macro auto controller monitoring
+                    MacroAutoControllerSingleton.GetInstance()?.StartMonitoring();
                     break;
                 case MessageCode.SERVER_LIST_CHANGED:
                     this.refreshProcessList();
@@ -322,6 +329,16 @@ namespace _4RTools.Forms
             frm.Location = new Point(0, 65);
             frm.MdiParent = this;
             addform(this.tabMacroSwitch, frm);
+            frm.Show();
+        }
+
+        public void SetMacroAutoSettingsWindow()
+        {
+            MacroAutoSettingsForm frm = new MacroAutoSettingsForm(subject);
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.Location = new Point(0, 65);
+            frm.MdiParent = this;
+            addform(this.tabMacroSwitch, frm); // Adding to same tab as macro switch for now
             frm.Show();
         }
         #endregion
