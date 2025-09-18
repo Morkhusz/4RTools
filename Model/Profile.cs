@@ -35,6 +35,7 @@ namespace _4RTools.Model
                     profile.MacroSwitch = JsonConvert.DeserializeObject<Macro>(Profile.GetByAction(rawObject, profile.MacroSwitch));
                     profile.DebuffsRecovery = JsonConvert.DeserializeObject<DebuffsRecovery>(Profile.GetByAction(rawObject, profile.DebuffsRecovery));
                     profile.AutoclickMouseRight = JsonConvert.DeserializeObject<AutoclickMouseRight>(Profile.GetByAction(rawObject, profile.AutoclickMouseRight));
+                    profile.AutoclickMouseLeft = JsonConvert.DeserializeObject<AutoclickMouseLeft>(Profile.GetByAction(rawObject, profile.AutoclickMouseLeft));
                 }
             }
             catch (Exception ex)
@@ -127,6 +128,7 @@ namespace _4RTools.Model
         public ATKDEFMode AtkDefMode { get; set; }
         public DebuffsRecovery DebuffsRecovery { get; set; }
         public AutoclickMouseRight AutoclickMouseRight { get; set; }
+        public AutoclickMouseLeft AutoclickMouseLeft { get; set; }
 
         public Profile(string name)
         {
@@ -146,6 +148,7 @@ namespace _4RTools.Model
             this.AtkDefMode = new ATKDEFMode();
             this.DebuffsRecovery = new DebuffsRecovery();
             this.AutoclickMouseRight = new AutoclickMouseRight();
+            this.AutoclickMouseLeft = new AutoclickMouseLeft();
         }
 
         public static object GetByAction(dynamic obj, Action action)

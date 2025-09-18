@@ -23,46 +23,141 @@ namespace _4RTools.Forms
 
         private void InitializeEvents()
         {
-            this.txtToggleKey.KeyDown += new System.Windows.Forms.KeyEventHandler(FormUtils.OnKeyDown);
-            this.txtToggleKey.KeyPress += new KeyPressEventHandler(FormUtils.OnKeyPress);
-            this.txtToggleKey.TextChanged += new EventHandler(this.OnToggleKeyChange);
-            this.numDelay.ValueChanged += new EventHandler(this.OnDelayChange);
-            this.chkAudioFeedback.CheckedChanged += new EventHandler(this.OnAudioFeedbackChange);
-            this.btnToggle.Click += new EventHandler(this.OnToggleClick);
+            // Left click events
+            this.txtToggleKeyLeft.KeyDown += new System.Windows.Forms.KeyEventHandler(FormUtils.OnKeyDown);
+            this.txtToggleKeyLeft.KeyPress += new KeyPressEventHandler(FormUtils.OnKeyPress);
+            this.txtToggleKeyLeft.TextChanged += new EventHandler(this.OnToggleKeyLeftChange);
+            this.numDelayLeft.ValueChanged += new EventHandler(this.OnDelayLeftChange);
+            this.chkAudioFeedbackLeft.CheckedChanged += new EventHandler(this.OnAudioFeedbackLeftChange);
+            this.btnToggleLeft.Click += new EventHandler(this.OnToggleLeftClick);
+            
+            // Right click events
+            this.txtToggleKeyRight.KeyDown += new System.Windows.Forms.KeyEventHandler(FormUtils.OnKeyDown);
+            this.txtToggleKeyRight.KeyPress += new KeyPressEventHandler(FormUtils.OnKeyPress);
+            this.txtToggleKeyRight.TextChanged += new EventHandler(this.OnToggleKeyRightChange);
+            this.numDelayRight.ValueChanged += new EventHandler(this.OnDelayRightChange);
+            this.chkAudioFeedbackRight.CheckedChanged += new EventHandler(this.OnAudioFeedbackRightChange);
+            this.btnToggleRight.Click += new EventHandler(this.OnToggleRightClick);
         }
 
         private void LoadConfiguration()
         {
-            var config = ProfileSingleton.GetCurrent().AutoclickMouseRight;
-            if (config.ToggleKey != System.Windows.Input.Key.None)
+            // Load left click configuration
+            var configLeft = ProfileSingleton.GetCurrent().AutoclickMouseLeft;
+            if (configLeft.ToggleKey != System.Windows.Input.Key.None)
             {
-                this.txtToggleKey.Text = config.ToggleKey.ToString();
+                this.txtToggleKeyLeft.Text = configLeft.ToggleKey.ToString();
             }
-            this.numDelay.Value = config.ClickDelay;
-            this.chkAudioFeedback.Checked = config.AudioFeedback;
+            this.numDelayLeft.Value = configLeft.ClickDelay;
+            this.chkAudioFeedbackLeft.Checked = configLeft.AudioFeedback;
+            
+            // Load right click configuration
+            var configRight = ProfileSingleton.GetCurrent().AutoclickMouseRight;
+            if (configRight.ToggleKey != System.Windows.Input.Key.None)
+            {
+                this.txtToggleKeyRight.Text = configRight.ToggleKey.ToString();
+            }
+            this.numDelayRight.Value = configRight.ClickDelay;
+            this.chkAudioFeedbackRight.Checked = configRight.AudioFeedback;
+            
             UpdateStatus();
         }
 
         private void UpdateStatus()
         {
-            var config = ProfileSingleton.GetCurrent().AutoclickMouseRight;
-            if (config.IsActive)
+            // Update left click status
+            var configLeft = ProfileSingleton.GetCurrent().AutoclickMouseLeft;
+            if (configLeft.IsActive)
             {
-                this.lblStatus.Text = "Status: ACTIVE";
-                this.lblStatus.ForeColor = Color.Green;
-                this.btnToggle.Text = "ON";
-                this.btnToggle.BackColor = Color.Green;
+                this.lblStatusLeft.Text = "Status: ACTIVE";
+                this.lblStatusLeft.ForeColor = Color.Green;
+                this.btnToggleLeft.Text = "ON";
+                this.btnToggleLeft.BackColor = Color.Green;
             }
             else
             {
-                this.lblStatus.Text = "Status: INACTIVE";
-                this.lblStatus.ForeColor = Color.Red;
-                this.btnToggle.Text = "OFF";
-                this.btnToggle.BackColor = Color.Red;
+                this.lblStatusLeft.Text = "Status: INACTIVE";
+                this.lblStatusLeft.ForeColor = Color.Red;
+                this.btnToggleLeft.Text = "OFF";
+                this.btnToggleLeft.BackColor = Color.Red;
+            }
+            
+            // Update right click status
+            var configRight = ProfileSingleton.GetCurrent().AutoclickMouseRight;
+            if (configRight.IsActive)
+            {
+                this.lblStatusRight.Text = "Status: ACTIVE";
+                this.lblStatusRight.ForeColor = Color.Green;
+                this.btnToggleRight.Text = "ON";
+                this.btnToggleRight.BackColor = Color.Green;
+            }
+            else
+            {
+                this.lblStatusRight.Text = "Status: INACTIVE";
+                this.lblStatusRight.ForeColor = Color.Red;
+                this.btnToggleRight.Text = "OFF";
+                this.btnToggleRight.BackColor = Color.Red;
             }
         }
 
-        private void OnToggleKeyChange(object sender, EventArgs e)
+        // Left click event handlers
+        private void OnToggleKeyLeftChange(object sender, EventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            try
+            {
+                var config = ProfileSingleton.GetCurrent().AutoclickMouseLeft;
+                
+                // Unregister old key if any
+                if (config.ToggleKey != System.Windows.Input.Key.None)
+                {
+                    Keys oldKey = (Keys)Enum.Parse(typeof(Keys), config.ToggleKey.ToString());
+                    KeyboardHook.RemoveDown(oldKey);
+                }
+                
+                if (!string.IsNullOrEmpty(textBox.Text))
+                {
+                    System.Windows.Input.Key key = (System.Windows.Input.Key)new KeyConverter().ConvertFromString(textBox.Text);
+                    config.ToggleKey = key;
+                    
+                    // Register new key
+                    Keys newKey = (Keys)Enum.Parse(typeof(Keys), key.ToString());
+                    KeyboardHook.AddKeyDown(newKey, () => { config.ToggleActive(); UpdateStatus(); return true; });
+                }
+                else
+                {
+                    config.ToggleKey = System.Windows.Input.Key.None;
+                }
+                
+                ProfileSingleton.SetConfiguration(config);
+            }
+            catch { }
+        }
+
+        private void OnDelayLeftChange(object sender, EventArgs e)
+        {
+            NumericUpDown numericUpDown = (NumericUpDown)sender;
+            ProfileSingleton.GetCurrent().AutoclickMouseLeft.ClickDelay = (int)numericUpDown.Value;
+            ProfileSingleton.SetConfiguration(ProfileSingleton.GetCurrent().AutoclickMouseLeft);
+        }
+
+        private void OnAudioFeedbackLeftChange(object sender, EventArgs e)
+        {
+            CheckBox checkBox = (CheckBox)sender;
+            ProfileSingleton.GetCurrent().AutoclickMouseLeft.AudioFeedback = checkBox.Checked;
+            ProfileSingleton.SetConfiguration(ProfileSingleton.GetCurrent().AutoclickMouseLeft);
+        }
+
+        private void OnToggleLeftClick(object sender, EventArgs e)
+        {
+            var config = ProfileSingleton.GetCurrent().AutoclickMouseLeft;
+            config.ToggleActive();
+            ProfileSingleton.SetConfiguration(config);
+            UpdateStatus();
+        }
+
+        // Right click event handlers
+        private void OnToggleKeyRightChange(object sender, EventArgs e)
         {
             TextBox textBox = (TextBox)sender;
             try
@@ -83,7 +178,7 @@ namespace _4RTools.Forms
                     
                     // Register new key
                     Keys newKey = (Keys)Enum.Parse(typeof(Keys), key.ToString());
-                    KeyboardHook.AddKeyDown(newKey, () => { config.ToggleActive(); return true; });
+                    KeyboardHook.AddKeyDown(newKey, () => { config.ToggleActive(); UpdateStatus(); return true; });
                 }
                 else
                 {
@@ -95,21 +190,21 @@ namespace _4RTools.Forms
             catch { }
         }
 
-        private void OnDelayChange(object sender, EventArgs e)
+        private void OnDelayRightChange(object sender, EventArgs e)
         {
             NumericUpDown numericUpDown = (NumericUpDown)sender;
             ProfileSingleton.GetCurrent().AutoclickMouseRight.ClickDelay = (int)numericUpDown.Value;
             ProfileSingleton.SetConfiguration(ProfileSingleton.GetCurrent().AutoclickMouseRight);
         }
 
-        private void OnAudioFeedbackChange(object sender, EventArgs e)
+        private void OnAudioFeedbackRightChange(object sender, EventArgs e)
         {
             CheckBox checkBox = (CheckBox)sender;
             ProfileSingleton.GetCurrent().AutoclickMouseRight.AudioFeedback = checkBox.Checked;
             ProfileSingleton.SetConfiguration(ProfileSingleton.GetCurrent().AutoclickMouseRight);
         }
 
-        private void OnToggleClick(object sender, EventArgs e)
+        private void OnToggleRightClick(object sender, EventArgs e)
         {
             var config = ProfileSingleton.GetCurrent().AutoclickMouseRight;
             config.ToggleActive();
@@ -127,9 +222,11 @@ namespace _4RTools.Forms
                     break;
                 case MessageCode.TURN_ON:
                     ProfileSingleton.GetCurrent().AutoclickMouseRight.Start();
+                    ProfileSingleton.GetCurrent().AutoclickMouseLeft.Start();
                     break;
                 case MessageCode.TURN_OFF:
                     ProfileSingleton.GetCurrent().AutoclickMouseRight.Stop();
+                    ProfileSingleton.GetCurrent().AutoclickMouseLeft.Stop();
                     break;
             }
         }
