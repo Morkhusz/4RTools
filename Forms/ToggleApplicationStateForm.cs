@@ -29,7 +29,23 @@ namespace _4RTools.Forms
             this.txtStatusToggleKey.KeyPress += new KeyPressEventHandler(FormUtils.OnKeyPress);
             this.txtStatusToggleKey.TextChanged += new EventHandler(this.onStatusToggleKeyChange);
 
+            // Initialize auto control checkboxes
+            InitializeAutoControlCheckboxes();
+
             InitializeContextualMenu();
+        }
+
+        private void InitializeAutoControlCheckboxes()
+        {
+            var preferences = ProfileSingleton.GetCurrent().UserPreferences;
+            
+            // Set initial checkbox states from preferences
+            this.cbCidade.Checked = preferences.AutoDisableOnCityEnter;
+            this.cbChat.Checked = preferences.AutoDisableOnChatMessage;
+            
+            // Wire up event handlers
+            this.cbCidade.CheckedChanged += new EventHandler(this.onCidadeCheckboxChange);
+            this.cbChat.CheckedChanged += new EventHandler(this.onChatCheckboxChange);
         }
 
         private void InitializeContextualMenu()
@@ -57,7 +73,17 @@ namespace _4RTools.Forms
                 this.txtStatusToggleKey.Text = currentToggleKey.ToString();
                 KeyboardHook.Add(currentToggleKey, new KeyboardHook.KeyPressed(this.toggleStatus));
                 lastKey = currentToggleKey;
+                
+                // Update checkbox states when profile changes
+                UpdateCheckboxStates();
             }
+        }
+        
+        private void UpdateCheckboxStates()
+        {
+            var preferences = ProfileSingleton.GetCurrent().UserPreferences;
+            this.cbCidade.Checked = preferences.AutoDisableOnCityEnter;
+            this.cbChat.Checked = preferences.AutoDisableOnChatMessage;
         }
 
         private void btnToggleStatusHandler(object sender, EventArgs e) { this.toggleStatus(); }
@@ -120,6 +146,34 @@ namespace _4RTools.Forms
         {
             // Close the form, which closes the application.
             this.subject.Notify(new Utils.Message(MessageCode.SHUTDOWN_APPLICATION, null));
+        }
+
+        private void onCidadeCheckboxChange(object sender, EventArgs e)
+        {
+            var preferences = ProfileSingleton.GetCurrent().UserPreferences;
+            var controller = MacroAutoControllerSingleton.GetInstance();
+            
+            if (preferences != null && controller != null)
+            {
+                preferences.AutoDisableOnCityEnter = this.cbCidade.Checked;
+                preferences.AutoEnableOnCityExit = this.cbCidade.Checked; // Same setting for enter/exit
+                controller.AutoDisableOnCityEnter = this.cbCidade.Checked;
+                controller.AutoEnableOnCityExit = this.cbCidade.Checked;
+                ProfileSingleton.SetConfiguration(preferences);
+            }
+        }
+
+        private void onChatCheckboxChange(object sender, EventArgs e)
+        {
+            var preferences = ProfileSingleton.GetCurrent().UserPreferences;
+            var controller = MacroAutoControllerSingleton.GetInstance();
+            
+            if (preferences != null && controller != null)
+            {
+                preferences.AutoDisableOnChatMessage = this.cbChat.Checked;
+                controller.AutoDisableOnChatMessage = this.cbChat.Checked;
+                ProfileSingleton.SetConfiguration(preferences);
+            }
         }
     }
 }

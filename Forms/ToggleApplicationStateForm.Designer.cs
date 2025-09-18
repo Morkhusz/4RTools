@@ -38,6 +38,8 @@ namespace _4RTools.Forms
             this.notifyIconTray = new System.Windows.Forms.NotifyIcon(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbAudio = new System.Windows.Forms.CheckBox();
+            this.cbCidade = new System.Windows.Forms.CheckBox();
+            this.cbChat = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,13 +89,15 @@ namespace _4RTools.Forms
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbChat);
+            this.groupBox1.Controls.Add(this.cbCidade);
             this.groupBox1.Controls.Add(this.cbAudio);
             this.groupBox1.Controls.Add(this.txtStatusToggleKey);
             this.groupBox1.Controls.Add(this.btnStatusToggle);
             this.groupBox1.Controls.Add(this.lblStatusToggle);
             this.groupBox1.Location = new System.Drawing.Point(1, 1);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(222, 110);
+            this.groupBox1.Size = new System.Drawing.Size(222, 150);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ON / OFF";
@@ -110,12 +114,36 @@ namespace _4RTools.Forms
             this.cbAudio.Text = "Sound";
             this.cbAudio.UseVisualStyleBackColor = true;
             // 
+            // cbCidade
+            // 
+            this.cbCidade.AutoSize = true;
+            this.cbCidade.Checked = true;
+            this.cbCidade.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbCidade.Location = new System.Drawing.Point(15, 110);
+            this.cbCidade.Name = "cbCidade";
+            this.cbCidade.Size = new System.Drawing.Size(60, 17);
+            this.cbCidade.TabIndex = 25;
+            this.cbCidade.Text = "Cidade";
+            this.cbCidade.UseVisualStyleBackColor = true;
+            // 
+            // cbChat
+            // 
+            this.cbChat.AutoSize = true;
+            this.cbChat.Checked = true;
+            this.cbChat.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbChat.Location = new System.Drawing.Point(120, 110);
+            this.cbChat.Name = "cbChat";
+            this.cbChat.Size = new System.Drawing.Size(48, 17);
+            this.cbChat.TabIndex = 26;
+            this.cbChat.Text = "Chat";
+            this.cbChat.UseVisualStyleBackColor = true;
+            // 
             // ToggleApplicationStateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(226, 114);
+            this.ClientSize = new System.Drawing.Size(226, 154);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ToggleApplicationStateForm";
@@ -134,5 +162,7 @@ namespace _4RTools.Forms
         private System.Windows.Forms.NotifyIcon notifyIconTray;
         private GroupBox groupBox1;
         private CheckBox cbAudio;
+        private CheckBox cbCidade;
+        private CheckBox cbChat;
     }
 }

@@ -38,7 +38,6 @@ namespace _4RTools.Forms
             SetSongMacroWindow();
             SetATKDEFWindow();
             SetMacroSwitchWindow();
-            SetMacroAutoSettingsWindow();
             SetServerWindow();
 
             // Initialize MacroAutoController
@@ -342,16 +341,6 @@ namespace _4RTools.Forms
             frm.Location = new Point(0, 65);
             frm.MdiParent = this;
             addform(this.tabMacroSwitch, frm);
-            frm.Show();
-        }
-
-        public void SetMacroAutoSettingsWindow()
-        {
-            MacroAutoSettingsForm frm = new MacroAutoSettingsForm(subject);
-            frm.FormBorderStyle = FormBorderStyle.None;
-            frm.Location = new Point(0, 320); // Position below macro switch form
-            frm.MdiParent = this;
-            addform(this.tabMacroSwitch, frm); // Adding to same tab as macro switch
             frm.Show();
         }
         #endregion
