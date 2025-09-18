@@ -27,38 +27,58 @@ namespace _4RTools.Forms
         private void LoadSettings()
         {
             var controller = MacroAutoControllerSingleton.GetInstance();
-            if (controller != null)
+            var preferences = ProfileSingleton.GetCurrent().UserPreferences;
+            
+            if (controller != null && preferences != null)
             {
-                cbAutoDisableOnCityEnter.Checked = controller.AutoDisableOnCityEnter;
-                cbAutoEnableOnCityExit.Checked = controller.AutoEnableOnCityExit;
-                cbAutoDisableOnChatMessage.Checked = controller.AutoDisableOnChatMessage;
+                // Load from user preferences
+                controller.AutoDisableOnCityEnter = preferences.AutoDisableOnCityEnter;
+                controller.AutoEnableOnCityExit = preferences.AutoEnableOnCityExit;
+                controller.AutoDisableOnChatMessage = preferences.AutoDisableOnChatMessage;
+                
+                // Update UI
+                cbAutoDisableOnCityEnter.Checked = preferences.AutoDisableOnCityEnter;
+                cbAutoEnableOnCityExit.Checked = preferences.AutoEnableOnCityExit;
+                cbAutoDisableOnChatMessage.Checked = preferences.AutoDisableOnChatMessage;
             }
         }
 
         private void cbAutoDisableOnCityEnter_CheckedChanged(object sender, EventArgs e)
         {
             var controller = MacroAutoControllerSingleton.GetInstance();
-            if (controller != null)
+            var preferences = ProfileSingleton.GetCurrent().UserPreferences;
+            
+            if (controller != null && preferences != null)
             {
                 controller.AutoDisableOnCityEnter = cbAutoDisableOnCityEnter.Checked;
+                preferences.AutoDisableOnCityEnter = cbAutoDisableOnCityEnter.Checked;
+                ProfileSingleton.SetConfiguration(preferences);
             }
         }
 
         private void cbAutoEnableOnCityExit_CheckedChanged(object sender, EventArgs e)
         {
             var controller = MacroAutoControllerSingleton.GetInstance();
-            if (controller != null)
+            var preferences = ProfileSingleton.GetCurrent().UserPreferences;
+            
+            if (controller != null && preferences != null)
             {
                 controller.AutoEnableOnCityExit = cbAutoEnableOnCityExit.Checked;
+                preferences.AutoEnableOnCityExit = cbAutoEnableOnCityExit.Checked;
+                ProfileSingleton.SetConfiguration(preferences);
             }
         }
 
         private void cbAutoDisableOnChatMessage_CheckedChanged(object sender, EventArgs e)
         {
             var controller = MacroAutoControllerSingleton.GetInstance();
-            if (controller != null)
+            var preferences = ProfileSingleton.GetCurrent().UserPreferences;
+            
+            if (controller != null && preferences != null)
             {
                 controller.AutoDisableOnChatMessage = cbAutoDisableOnChatMessage.Checked;
+                preferences.AutoDisableOnChatMessage = cbAutoDisableOnChatMessage.Checked;
+                ProfileSingleton.SetConfiguration(preferences);
             }
         }
 
@@ -74,12 +94,12 @@ namespace _4RTools.Forms
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.Location = new System.Drawing.Point(12, 9);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(160, 13);
+            this.lblTitle.Size = new System.Drawing.Size(180, 15);
             this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "Automatic Macro Control";
+            this.lblTitle.Text = "Configurações Automáticas";
             
             // 
             // cbAutoDisableOnCityEnter
@@ -87,9 +107,9 @@ namespace _4RTools.Forms
             this.cbAutoDisableOnCityEnter.AutoSize = true;
             this.cbAutoDisableOnCityEnter.Location = new System.Drawing.Point(15, 35);
             this.cbAutoDisableOnCityEnter.Name = "cbAutoDisableOnCityEnter";
-            this.cbAutoDisableOnCityEnter.Size = new System.Drawing.Size(200, 17);
+            this.cbAutoDisableOnCityEnter.Size = new System.Drawing.Size(240, 17);
             this.cbAutoDisableOnCityEnter.TabIndex = 1;
-            this.cbAutoDisableOnCityEnter.Text = "Auto-disable when entering cities";
+            this.cbAutoDisableOnCityEnter.Text = "Desligar macros ao entrar numa cidade";
             this.cbAutoDisableOnCityEnter.UseVisualStyleBackColor = true;
             this.cbAutoDisableOnCityEnter.CheckedChanged += new EventHandler(this.cbAutoDisableOnCityEnter_CheckedChanged);
             
@@ -99,9 +119,9 @@ namespace _4RTools.Forms
             this.cbAutoEnableOnCityExit.AutoSize = true;
             this.cbAutoEnableOnCityExit.Location = new System.Drawing.Point(15, 58);
             this.cbAutoEnableOnCityExit.Name = "cbAutoEnableOnCityExit";
-            this.cbAutoEnableOnCityExit.Size = new System.Drawing.Size(185, 17);
+            this.cbAutoEnableOnCityExit.Size = new System.Drawing.Size(225, 17);
             this.cbAutoEnableOnCityExit.TabIndex = 2;
-            this.cbAutoEnableOnCityExit.Text = "Auto-enable when leaving cities";
+            this.cbAutoEnableOnCityExit.Text = "Ligar macros ao sair de uma cidade";
             this.cbAutoEnableOnCityExit.UseVisualStyleBackColor = true;
             this.cbAutoEnableOnCityExit.CheckedChanged += new EventHandler(this.cbAutoEnableOnCityExit_CheckedChanged);
             
@@ -111,9 +131,9 @@ namespace _4RTools.Forms
             this.cbAutoDisableOnChatMessage.AutoSize = true;
             this.cbAutoDisableOnChatMessage.Location = new System.Drawing.Point(15, 81);
             this.cbAutoDisableOnChatMessage.Name = "cbAutoDisableOnChatMessage";
-            this.cbAutoDisableOnChatMessage.Size = new System.Drawing.Size(220, 17);
+            this.cbAutoDisableOnChatMessage.Size = new System.Drawing.Size(260, 17);
             this.cbAutoDisableOnChatMessage.TabIndex = 3;
-            this.cbAutoDisableOnChatMessage.Text = "Auto-disable when receiving chat messages";
+            this.cbAutoDisableOnChatMessage.Text = "Desligar macros ao receber mensagens (PM)";
             this.cbAutoDisableOnChatMessage.UseVisualStyleBackColor = true;
             this.cbAutoDisableOnChatMessage.CheckedChanged += new EventHandler(this.cbAutoDisableOnChatMessage_CheckedChanged);
             
@@ -122,13 +142,13 @@ namespace _4RTools.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 120);
+            this.ClientSize = new System.Drawing.Size(310, 120);
             this.Controls.Add(this.cbAutoDisableOnChatMessage);
             this.Controls.Add(this.cbAutoEnableOnCityExit);
             this.Controls.Add(this.cbAutoDisableOnCityEnter);
             this.Controls.Add(this.lblTitle);
             this.Name = "MacroAutoSettingsForm";
-            this.Text = "Macro Auto Settings";
+            this.Text = "Configurações Automáticas dos Macros";
             this.ResumeLayout(false);
             this.PerformLayout();
         }

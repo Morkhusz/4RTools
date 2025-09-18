@@ -36,10 +36,38 @@ namespace _4RTools.Model
         // State tracking
         private bool wasInCity = false;
         private string lastChatContent = "";
+        private uint lastHpValue = 0;
+        private uint lastSpValue = 0;
+        private DateTime lastStatusChange = DateTime.Now;
         
         public MacroAutoController(Subject subject)
         {
             this.subject = subject;
+            LoadSettingsFromProfile();
+        }
+        
+        private void LoadSettingsFromProfile()
+        {
+            try
+            {
+                var preferences = ProfileSingleton.GetCurrent()?.UserPreferences;
+                if (preferences != null)
+                {
+                    AutoDisableOnCityEnter = preferences.AutoDisableOnCityEnter;
+                    AutoEnableOnCityExit = preferences.AutoEnableOnCityExit;
+                    AutoDisableOnChatMessage = preferences.AutoDisableOnChatMessage;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[MacroAutoController] Error loading settings: {ex.Message}");
+                // Use default values if loading fails
+            }
+        }
+        
+        public void UpdateSettingsFromProfile()
+        {
+            LoadSettingsFromProfile();
         }
         
         public void StartMonitoring()
@@ -130,20 +158,23 @@ namespace _4RTools.Model
         {
             try
             {
-                // Check if a chat window or PM window is currently active
-                // This can be done by monitoring window focus or specific UI elements
+                // Enhanced chat detection approach
                 
-                // Method 1: Check if game window has focus and detect chat input
+                // Method 1: Monitor for @go commands by checking game window activity
+                if (IsGoCommandDetected(roClient))
+                {
+                    // @go command detected, likely teleporting to city
+                    subject.Notify(new Message(MessageCode.CITY_ENTERED, null));
+                    return;
+                }
+                
+                // Method 2: Check if a chat window or PM window is currently active
                 IntPtr foregroundWindow = GetForegroundWindow();
                 IntPtr gameWindow = roClient.process.MainWindowHandle;
                 
                 if (foregroundWindow == gameWindow)
                 {
                     // Game window is active, check if chat input is focused
-                    // This would require more specific window analysis
-                    
-                    // Method 2: Check for specific memory addresses that indicate chat state
-                    // For now, we'll use a placeholder implementation
                     if (IsChatInputActive(roClient))
                     {
                         subject.Notify(new Message(MessageCode.CHAT_MESSAGE_RECEIVED, null));
@@ -156,15 +187,31 @@ namespace _4RTools.Model
             }
         }
         
+        private bool IsGoCommandDetected(Client roClient)
+        {
+            try
+            {
+                // This is a placeholder for @go command detection
+                // Real implementation would need to:
+                // 1. Monitor chat input buffer for "@go" commands
+                // 2. Check for teleportation status effects
+                // 3. Monitor location changes in memory
+                
+                // For now, we'll rely on city detection through other means
+                return false;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         private static extern IntPtr GetForegroundWindow();
         
         private bool DetectCityState(Client roClient)
         {
-            // This is a simplified detection method
-            // In a real implementation, this would read specific memory addresses
-            // that contain location information or detect UI elements specific to cities
-            
+            // Enhanced city detection using multiple indicators
             try
             {
                 uint currentHp = roClient.ReadCurrentHp();
@@ -176,22 +223,73 @@ namespace _4RTools.Model
                 if (currentHp == 0 || maxHp == 0 || currentSp == 0 || maxSp == 0)
                     return wasInCity; // Keep previous state
                 
-                // Improved heuristic: 
-                // 1. HP and SP are both at max (cities heal players)
-                // 2. And no recent HP/SP changes (no combat)
+                // Detect rapid healing (indicator of city/safe zone)
+                bool rapidHealing = false;
+                if (lastHpValue > 0 && lastSpValue > 0)
+                {
+                    uint hpGain = currentHp > lastHpValue ? currentHp - lastHpValue : 0;
+                    uint spGain = currentSp > lastSpValue ? currentSp - lastSpValue : 0;
+                    
+                    // If HP or SP increased significantly in short time, likely in city
+                    if ((hpGain > maxHp * 0.1 || spGain > maxSp * 0.1) && 
+                        (DateTime.Now - lastStatusChange).TotalSeconds < 5)
+                    {
+                        rapidHealing = true;
+                    }
+                }
+                
+                // Update tracking values
+                if (lastHpValue != currentHp || lastSpValue != currentSp)
+                {
+                    lastHpValue = currentHp;
+                    lastSpValue = currentSp;
+                    lastStatusChange = DateTime.Now;
+                }
+                
+                // Primary indicator: HP and SP at max
                 bool atFullHealth = (currentHp == maxHp && currentSp == maxSp);
                 
-                // Additional check: Look for status effects that might indicate city
-                // Status effect at index 0 might be a city-related buff
-                uint statusEffect = roClient.CurrentBuffStatusCode(0);
-                bool hasUrbanBuff = (statusEffect != 0); // Placeholder for actual city buff detection
+                // Secondary indicator: check for status effects that indicate safe zones
+                // Many cities give specific buffs or have indicators in status array
+                bool hasSafeZoneBuff = CheckForSafeZoneBuffs(roClient);
                 
-                // Combine heuristics: full health OR specific city buffs
-                return atFullHealth || hasUrbanBuff;
+                // Tertiary indicator: no combat activity for extended period
+                bool noCombatActivity = (DateTime.Now - lastStatusChange).TotalSeconds > 10 && atFullHealth;
+                
+                // City detection logic: combine multiple indicators
+                bool inCity = atFullHealth && (rapidHealing || hasSafeZoneBuff || noCombatActivity);
+                
+                return inCity;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[MacroAutoController] Error in city detection: {ex.Message}");
+                return wasInCity; // Keep previous state on error
+            }
+        }
+        
+        private bool CheckForSafeZoneBuffs(Client roClient)
+        {
+            try
+            {
+                // Check common status effect slots for city/safe zone indicators
+                // These would need to be calibrated for specific RO clients
+                for (int i = 0; i < 10; i++) // Check first 10 status slots
+                {
+                    uint statusEffect = roClient.CurrentBuffStatusCode(i);
+                    
+                    // Common safe zone status IDs (these would need to be researched per client)
+                    // These are placeholder values that would need actual game-specific IDs
+                    if (statusEffect == 0x01 || statusEffect == 0x02 || statusEffect == 0x03)
+                    {
+                        return true;
+                    }
+                }
+                return false;
             }
             catch
             {
-                return wasInCity; // Keep previous state on error
+                return false;
             }
         }
         

@@ -173,6 +173,8 @@ namespace _4RTools.Forms
                     Client client = ClientSingleton.GetClient();
                     if (client != null)
                         this.characterName.Text = client.ReadCharacterName();
+                    // Update auto controller settings when profile changes
+                    MacroAutoControllerSingleton.GetInstance()?.UpdateSettingsFromProfile();
                     break;
                 case MessageCode.TURN_OFF:
                     this.profileCB.Enabled = true;
@@ -336,9 +338,9 @@ namespace _4RTools.Forms
         {
             MacroAutoSettingsForm frm = new MacroAutoSettingsForm(subject);
             frm.FormBorderStyle = FormBorderStyle.None;
-            frm.Location = new Point(0, 65);
+            frm.Location = new Point(0, 320); // Position below macro switch form
             frm.MdiParent = this;
-            addform(this.tabMacroSwitch, frm); // Adding to same tab as macro switch for now
+            addform(this.tabMacroSwitch, frm); // Adding to same tab as macro switch
             frm.Show();
         }
         #endregion
