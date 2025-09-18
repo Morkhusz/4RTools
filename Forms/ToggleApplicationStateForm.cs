@@ -79,7 +79,7 @@ namespace _4RTools.Forms
             bool isOn = this.btnStatusToggle.Text == "ON";
             if (isOn)
             {
-                this.btnStatusToggle.BackColor = Color.Red;
+                this.btnStatusToggle.BackColor = Color.FromArgb(52, 73, 94);
                 this.btnStatusToggle.Text = "OFF";
                 this.notifyIconTray.Icon = Resources._4RTools.ETCResource.logo_4rtools_off;
                 this.subject.Notify(new Utils.Message(MessageCode.TURN_OFF, null));
@@ -104,7 +104,7 @@ namespace _4RTools.Forms
                 else
                 {
                     this.lblStatusToggle.Text = "Please select the Ragnarok Client!!";
-                    this.lblStatusToggle.ForeColor = Color.Red;
+                    this.lblStatusToggle.ForeColor = Color.FromArgb(192, 57, 43);
                 }
             }
 

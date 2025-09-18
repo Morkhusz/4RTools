@@ -77,9 +77,9 @@ namespace _4RTools.Forms
             else
             {
                 this.lblStatusLeft.Text = "Status: INACTIVE";
-                this.lblStatusLeft.ForeColor = Color.Red;
+                this.lblStatusLeft.ForeColor = Color.FromArgb(52, 73, 94);
                 this.btnToggleLeft.Text = "OFF";
-                this.btnToggleLeft.BackColor = Color.Red;
+                this.btnToggleLeft.BackColor = Color.FromArgb(52, 73, 94);
             }
             
             // Update right click status
@@ -94,9 +94,9 @@ namespace _4RTools.Forms
             else
             {
                 this.lblStatusRight.Text = "Status: INACTIVE";
-                this.lblStatusRight.ForeColor = Color.Red;
+                this.lblStatusRight.ForeColor = Color.FromArgb(52, 73, 94);
                 this.btnToggleRight.Text = "OFF";
-                this.btnToggleRight.BackColor = Color.Red;
+                this.btnToggleRight.BackColor = Color.FromArgb(52, 73, 94);
             }
         }
 

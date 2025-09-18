@@ -155,7 +155,7 @@ namespace _4RTools.Forms
             // 
             this.lblStatusLeft.AutoSize = true;
             this.lblStatusLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatusLeft.ForeColor = System.Drawing.Color.Red;
+            this.lblStatusLeft.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.lblStatusLeft.Location = new System.Drawing.Point(15, 115);
             this.lblStatusLeft.Name = "lblStatusLeft";
             this.lblStatusLeft.Size = new System.Drawing.Size(142, 15);
@@ -164,7 +164,7 @@ namespace _4RTools.Forms
             // 
             // btnToggleLeft
             // 
-            this.btnToggleLeft.BackColor = System.Drawing.Color.Red;
+            this.btnToggleLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.btnToggleLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnToggleLeft.ForeColor = System.Drawing.Color.White;
             this.btnToggleLeft.Location = new System.Drawing.Point(165, 110);
@@ -264,7 +264,7 @@ namespace _4RTools.Forms
             // 
             this.lblStatusRight.AutoSize = true;
             this.lblStatusRight.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatusRight.ForeColor = System.Drawing.Color.Red;
+            this.lblStatusRight.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.lblStatusRight.Location = new System.Drawing.Point(15, 115);
             this.lblStatusRight.Name = "lblStatusRight";
             this.lblStatusRight.Size = new System.Drawing.Size(142, 15);
@@ -273,7 +273,7 @@ namespace _4RTools.Forms
             // 
             // btnToggleRight
             // 
-            this.btnToggleRight.BackColor = System.Drawing.Color.Red;
+            this.btnToggleRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.btnToggleRight.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnToggleRight.ForeColor = System.Drawing.Color.White;
             this.btnToggleRight.Location = new System.Drawing.Point(165, 110);
