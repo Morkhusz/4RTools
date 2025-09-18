@@ -9,6 +9,7 @@ namespace _4RTools.Model
         public string toggleStateKey { get; set; } = Keys.End.ToString();
         
         // Automatic macro control settings
+        public bool AutoControlEnabled { get; set; } = true;
         public bool AutoDisableOnCityEnter { get; set; } = true;
         public bool AutoEnableOnCityExit { get; set; } = true;
         public bool AutoDisableOnChatMessage { get; set; } = true;

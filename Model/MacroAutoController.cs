@@ -29,6 +29,7 @@ namespace _4RTools.Model
         private bool isMonitoring = false;
         
         // Configuration flags
+        public bool AutoControlEnabled { get; set; } = true;
         public bool AutoDisableOnCityEnter { get; set; } = true;
         public bool AutoEnableOnCityExit { get; set; } = true;
         public bool AutoDisableOnChatMessage { get; set; } = true;
@@ -53,6 +54,7 @@ namespace _4RTools.Model
                 var preferences = ProfileSingleton.GetCurrent()?.UserPreferences;
                 if (preferences != null)
                 {
+                    AutoControlEnabled = preferences.AutoControlEnabled;
                     AutoDisableOnCityEnter = preferences.AutoDisableOnCityEnter;
                     AutoEnableOnCityExit = preferences.AutoEnableOnCityExit;
                     AutoDisableOnChatMessage = preferences.AutoDisableOnChatMessage;
@@ -88,6 +90,13 @@ namespace _4RTools.Model
         
         private int MonitoringThread()
         {
+            // Skip monitoring if auto control is disabled
+            if (!AutoControlEnabled)
+            {
+                Thread.Sleep(1000);
+                return 0;
+            }
+            
             Client roClient = ClientSingleton.GetClient();
             if (roClient == null)
             {

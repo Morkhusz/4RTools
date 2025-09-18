@@ -32,14 +32,41 @@ namespace _4RTools.Forms
             if (controller != null && preferences != null)
             {
                 // Load from user preferences
+                controller.AutoControlEnabled = preferences.AutoControlEnabled;
                 controller.AutoDisableOnCityEnter = preferences.AutoDisableOnCityEnter;
                 controller.AutoEnableOnCityExit = preferences.AutoEnableOnCityExit;
                 controller.AutoDisableOnChatMessage = preferences.AutoDisableOnChatMessage;
                 
                 // Update UI
+                cbAutoControlEnabled.Checked = preferences.AutoControlEnabled;
                 cbAutoDisableOnCityEnter.Checked = preferences.AutoDisableOnCityEnter;
                 cbAutoEnableOnCityExit.Checked = preferences.AutoEnableOnCityExit;
                 cbAutoDisableOnChatMessage.Checked = preferences.AutoDisableOnChatMessage;
+                
+                // Enable/disable other controls based on master toggle
+                UpdateControlStates();
+            }
+        }
+        
+        private void UpdateControlStates()
+        {
+            bool enabled = cbAutoControlEnabled.Checked;
+            cbAutoDisableOnCityEnter.Enabled = enabled;
+            cbAutoEnableOnCityExit.Enabled = enabled;
+            cbAutoDisableOnChatMessage.Enabled = enabled;
+        }
+
+        private void cbAutoControlEnabled_CheckedChanged(object sender, EventArgs e)
+        {
+            var controller = MacroAutoControllerSingleton.GetInstance();
+            var preferences = ProfileSingleton.GetCurrent().UserPreferences;
+            
+            if (controller != null && preferences != null)
+            {
+                controller.AutoControlEnabled = cbAutoControlEnabled.Checked;
+                preferences.AutoControlEnabled = cbAutoControlEnabled.Checked;
+                ProfileSingleton.SetConfiguration(preferences);
+                UpdateControlStates();
             }
         }
 
