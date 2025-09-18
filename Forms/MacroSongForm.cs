@@ -30,6 +30,27 @@ namespace _4RTools.Forms
                 case MessageCode.TURN_OFF:
                     ProfileSingleton.GetCurrent().SongMacro.Stop();
                     break;
+                case MessageCode.CITY_ENTERED:
+                    // Auto-disable macro when entering city
+                    if (MacroAutoControllerSingleton.GetInstance()?.AutoDisableOnCityEnter == true)
+                    {
+                        ProfileSingleton.GetCurrent().SongMacro.Stop();
+                    }
+                    break;
+                case MessageCode.CITY_EXITED:
+                    // Auto-enable macro when exiting city
+                    if (MacroAutoControllerSingleton.GetInstance()?.AutoEnableOnCityExit == true)
+                    {
+                        ProfileSingleton.GetCurrent().SongMacro.Start();
+                    }
+                    break;
+                case MessageCode.CHAT_MESSAGE_RECEIVED:
+                    // Auto-disable macro when receiving chat message
+                    if (MacroAutoControllerSingleton.GetInstance()?.AutoDisableOnChatMessage == true)
+                    {
+                        ProfileSingleton.GetCurrent().SongMacro.Stop();
+                    }
+                    break;
             }
 
         }

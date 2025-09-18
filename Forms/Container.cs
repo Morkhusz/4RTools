@@ -40,6 +40,9 @@ namespace _4RTools.Forms
             SetMacroSwitchWindow();
             SetServerWindow();
 
+            // Initialize MacroAutoController
+            MacroAutoControllerSingleton.Instance(this.subject);
+
             TrackerSingleton.Instance().SendEvent("desktop_login", "page_view", "desktop_container_load");
         }
 
@@ -170,16 +173,21 @@ namespace _4RTools.Forms
                     Client client = ClientSingleton.GetClient();
                     if (client != null)
                         this.characterName.Text = client.ReadCharacterName();
+                    // Update auto controller settings when profile changes
+                    MacroAutoControllerSingleton.GetInstance()?.UpdateSettingsFromProfile();
                     break;
                 case MessageCode.TURN_OFF:
                     this.profileCB.Enabled = true;
                     this.processCB.Enabled = true;
-
+                    // Stop macro auto controller monitoring
+                    MacroAutoControllerSingleton.GetInstance()?.StopMonitoring();
                     break;
                 case MessageCode.TURN_ON:
                     this.profileCB.Enabled = false;
                     this.processCB.Enabled = false;
                     this.characterName.Text = ClientSingleton.GetClient().ReadCharacterName();
+                    // Start macro auto controller monitoring
+                    MacroAutoControllerSingleton.GetInstance()?.StartMonitoring();
                     break;
                 case MessageCode.SERVER_LIST_CHANGED:
                     this.refreshProcessList();
