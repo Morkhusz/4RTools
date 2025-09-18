@@ -54,6 +54,7 @@ namespace _4RTools.Forms
             cbAutoDisableOnCityEnter.Enabled = enabled;
             cbAutoEnableOnCityExit.Enabled = enabled;
             cbAutoDisableOnChatMessage.Enabled = enabled;
+            cbAutoDisableOnCityOrChat.Enabled = enabled;
         }
 
         private void cbAutoControlEnabled_CheckedChanged(object sender, EventArgs e)
@@ -111,12 +112,14 @@ namespace _4RTools.Forms
 
         private void InitializeComponent()
         {
+            this.cbAutoControlEnabled = new CheckBox();
+            this.cbAutoDisableOnCityOrChat = new CheckBox(); // Novo checkbox
             this.cbAutoDisableOnCityEnter = new CheckBox();
             this.cbAutoEnableOnCityExit = new CheckBox();
             this.cbAutoDisableOnChatMessage = new CheckBox();
             this.lblTitle = new Label();
             this.SuspendLayout();
-            
+
             // 
             // lblTitle
             // 
@@ -127,49 +130,75 @@ namespace _4RTools.Forms
             this.lblTitle.Size = new System.Drawing.Size(180, 15);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Configurações Automáticas";
-            
+
+            // 
+            // cbAutoControlEnabled
+            // 
+            this.cbAutoControlEnabled.AutoSize = true;
+            this.cbAutoControlEnabled.Location = new System.Drawing.Point(15, 30);
+            this.cbAutoControlEnabled.Name = "cbAutoControlEnabled";
+            this.cbAutoControlEnabled.Size = new System.Drawing.Size(180, 17);
+            this.cbAutoControlEnabled.TabIndex = 0;
+            this.cbAutoControlEnabled.Text = "Ativar/desativar controle automático";
+            this.cbAutoControlEnabled.UseVisualStyleBackColor = true;
+            this.cbAutoControlEnabled.CheckedChanged += new EventHandler(this.cbAutoControlEnabled_CheckedChanged);
+
+            // 
+            // cbAutoDisableOnCityOrChat
+            // 
+            this.cbAutoDisableOnCityOrChat.AutoSize = true;
+            this.cbAutoDisableOnCityOrChat.Location = new System.Drawing.Point(15, 53);
+            this.cbAutoDisableOnCityOrChat.Name = "cbAutoDisableOnCityOrChat";
+            this.cbAutoDisableOnCityOrChat.Size = new System.Drawing.Size(270, 17);
+            this.cbAutoDisableOnCityOrChat.TabIndex = 1;
+            this.cbAutoDisableOnCityOrChat.Text = "Desligar macros ao entrar em cidade ou receber PM";
+            this.cbAutoDisableOnCityOrChat.UseVisualStyleBackColor = true;
+            // Adicione um event handler se desejar
+
             // 
             // cbAutoDisableOnCityEnter
             // 
             this.cbAutoDisableOnCityEnter.AutoSize = true;
-            this.cbAutoDisableOnCityEnter.Location = new System.Drawing.Point(15, 35);
+            this.cbAutoDisableOnCityEnter.Location = new System.Drawing.Point(15, 76);
             this.cbAutoDisableOnCityEnter.Name = "cbAutoDisableOnCityEnter";
             this.cbAutoDisableOnCityEnter.Size = new System.Drawing.Size(240, 17);
-            this.cbAutoDisableOnCityEnter.TabIndex = 1;
+            this.cbAutoDisableOnCityEnter.TabIndex = 2;
             this.cbAutoDisableOnCityEnter.Text = "Desligar macros ao entrar numa cidade";
             this.cbAutoDisableOnCityEnter.UseVisualStyleBackColor = true;
             this.cbAutoDisableOnCityEnter.CheckedChanged += new EventHandler(this.cbAutoDisableOnCityEnter_CheckedChanged);
-            
+
             // 
             // cbAutoEnableOnCityExit
             // 
             this.cbAutoEnableOnCityExit.AutoSize = true;
-            this.cbAutoEnableOnCityExit.Location = new System.Drawing.Point(15, 58);
+            this.cbAutoEnableOnCityExit.Location = new System.Drawing.Point(15, 99);
             this.cbAutoEnableOnCityExit.Name = "cbAutoEnableOnCityExit";
             this.cbAutoEnableOnCityExit.Size = new System.Drawing.Size(225, 17);
-            this.cbAutoEnableOnCityExit.TabIndex = 2;
+            this.cbAutoEnableOnCityExit.TabIndex = 3;
             this.cbAutoEnableOnCityExit.Text = "Ligar macros ao sair de uma cidade";
             this.cbAutoEnableOnCityExit.UseVisualStyleBackColor = true;
             this.cbAutoEnableOnCityExit.CheckedChanged += new EventHandler(this.cbAutoEnableOnCityExit_CheckedChanged);
-            
+
             // 
             // cbAutoDisableOnChatMessage
             // 
             this.cbAutoDisableOnChatMessage.AutoSize = true;
-            this.cbAutoDisableOnChatMessage.Location = new System.Drawing.Point(15, 81);
+            this.cbAutoDisableOnChatMessage.Location = new System.Drawing.Point(15, 122);
             this.cbAutoDisableOnChatMessage.Name = "cbAutoDisableOnChatMessage";
             this.cbAutoDisableOnChatMessage.Size = new System.Drawing.Size(260, 17);
-            this.cbAutoDisableOnChatMessage.TabIndex = 3;
+            this.cbAutoDisableOnChatMessage.TabIndex = 4;
             this.cbAutoDisableOnChatMessage.Text = "Desligar macros ao receber mensagens (PM)";
             this.cbAutoDisableOnChatMessage.UseVisualStyleBackColor = true;
             this.cbAutoDisableOnChatMessage.CheckedChanged += new EventHandler(this.cbAutoDisableOnChatMessage_CheckedChanged);
-            
+
             // 
             // MacroAutoSettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(310, 120);
+            this.ClientSize = new System.Drawing.Size(310, 160);
+            this.Controls.Add(this.cbAutoControlEnabled);
+            this.Controls.Add(this.cbAutoDisableOnCityOrChat); // Adicione o novo checkbox ao formulário
             this.Controls.Add(this.cbAutoDisableOnChatMessage);
             this.Controls.Add(this.cbAutoEnableOnCityExit);
             this.Controls.Add(this.cbAutoDisableOnCityEnter);
@@ -180,9 +209,11 @@ namespace _4RTools.Forms
             this.PerformLayout();
         }
 
+        private CheckBox cbAutoControlEnabled;
         private CheckBox cbAutoDisableOnCityEnter;
         private CheckBox cbAutoEnableOnCityExit;
         private CheckBox cbAutoDisableOnChatMessage;
+        private CheckBox cbAutoDisableOnCityOrChat;
         private Label lblTitle;
     }
 }
