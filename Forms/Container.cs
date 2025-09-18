@@ -31,7 +31,7 @@ namespace _4RTools.Forms
             SetSkillTimerWindow();
             SetProfileWindow();
             SetAHKWindow();
-            SetAutoclickMouseRightWindow();
+            SetCustomWindow();
             SetAutobuffSkillWindow();
             SetAutobuffStuffWindow();
             SetDebuffRecoveryWindow();
@@ -266,14 +266,14 @@ namespace _4RTools.Forms
             addform(this.tabPageSpammer, frm);
         }
 
-        public void SetAutoclickMouseRightWindow()
+        public void SetCustomWindow()
         {
-            AutoclickMouseRightForm frm = new AutoclickMouseRightForm(subject);
+            CustomForm frm = new CustomForm(subject);
             frm.FormBorderStyle = FormBorderStyle.None;
-            frm.Location = new Point(300, 65);
+            frm.Location = new Point(0, 65);
             frm.MdiParent = this;
             frm.Show();
-            addform(this.tabPageSpammer, frm);
+            addform(this.tabPageCustom, frm);
         }
 
         public void SetAutobuffSkillWindow()

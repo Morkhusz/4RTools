@@ -7,15 +7,15 @@ using _4RTools.Utils;
 
 namespace _4RTools.Forms
 {
-    public partial class AutoclickMouseRightForm : Form, IObserver
+    public partial class CustomForm : Form, IObserver
     {
         private Subject subject;
 
-        public AutoclickMouseRightForm(Subject subject)
+        public CustomForm(Subject subject)
         {
             InitializeComponent();
             this.subject = subject;
-            subject.Attach(this);
+            this.subject.Attach(this);
             
             InitializeEvents();
             LoadConfiguration();
@@ -121,6 +121,7 @@ namespace _4RTools.Forms
         {
             switch ((subject as Subject).Message.code)
             {
+                case MessageCode.PROCESS_CHANGED:
                 case MessageCode.PROFILE_CHANGED:
                     LoadConfiguration();
                     break;

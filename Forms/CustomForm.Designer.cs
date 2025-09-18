@@ -1,6 +1,8 @@
+using System.Windows.Forms;
+
 namespace _4RTools.Forms
 {
-    partial class AutoclickMouseRightForm
+    partial class CustomForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +30,8 @@ namespace _4RTools.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.lblCustomPlaceholder = new System.Windows.Forms.Label();
+            this.groupAutoclick = new System.Windows.Forms.GroupBox();
             this.lblToggleKey = new System.Windows.Forms.Label();
             this.txtToggleKey = new System.Windows.Forms.TextBox();
             this.lblDelay = new System.Windows.Forms.Label();
@@ -36,10 +40,34 @@ namespace _4RTools.Forms
             this.chkAudioFeedback = new System.Windows.Forms.CheckBox();
             this.lblStatus = new System.Windows.Forms.Label();
             this.btnToggle = new System.Windows.Forms.Button();
-            this.groupConfig = new System.Windows.Forms.GroupBox();
+            this.groupAutoclick.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numDelay)).BeginInit();
-            this.groupConfig.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // lblCustomPlaceholder
+            // 
+            this.lblCustomPlaceholder.AutoSize = true;
+            this.lblCustomPlaceholder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomPlaceholder.Location = new System.Drawing.Point(50, 20);
+            this.lblCustomPlaceholder.Name = "lblCustomPlaceholder";
+            this.lblCustomPlaceholder.Size = new System.Drawing.Size(300, 20);
+            this.lblCustomPlaceholder.TabIndex = 0;
+            this.lblCustomPlaceholder.Text = "Custom Tab - Additional Features";
+            // 
+            // groupAutoclick
+            // 
+            this.groupAutoclick.Controls.Add(this.lblToggleKey);
+            this.groupAutoclick.Controls.Add(this.txtToggleKey);
+            this.groupAutoclick.Controls.Add(this.lblDelay);
+            this.groupAutoclick.Controls.Add(this.numDelay);
+            this.groupAutoclick.Controls.Add(this.lblDelayMs);
+            this.groupAutoclick.Controls.Add(this.chkAudioFeedback);
+            this.groupAutoclick.Location = new System.Drawing.Point(50, 60);
+            this.groupAutoclick.Name = "groupAutoclick";
+            this.groupAutoclick.Size = new System.Drawing.Size(300, 120);
+            this.groupAutoclick.TabIndex = 1;
+            this.groupAutoclick.TabStop = false;
+            this.groupAutoclick.Text = "Autoclick Mouse Right Configuration";
             // 
             // lblToggleKey
             // 
@@ -115,10 +143,10 @@ namespace _4RTools.Forms
             this.lblStatus.AutoSize = true;
             this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatus.ForeColor = System.Drawing.Color.Red;
-            this.lblStatus.Location = new System.Drawing.Point(15, 150);
+            this.lblStatus.Location = new System.Drawing.Point(50, 195);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(142, 15);
-            this.lblStatus.TabIndex = 6;
+            this.lblStatus.TabIndex = 2;
             this.lblStatus.Text = "Status: INACTIVE";
             // 
             // btnToggle
@@ -126,45 +154,29 @@ namespace _4RTools.Forms
             this.btnToggle.BackColor = System.Drawing.Color.Red;
             this.btnToggle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnToggle.ForeColor = System.Drawing.Color.White;
-            this.btnToggle.Location = new System.Drawing.Point(200, 145);
+            this.btnToggle.Location = new System.Drawing.Point(275, 190);
             this.btnToggle.Name = "btnToggle";
             this.btnToggle.Size = new System.Drawing.Size(75, 25);
-            this.btnToggle.TabIndex = 7;
+            this.btnToggle.TabIndex = 3;
             this.btnToggle.Text = "OFF";
             this.btnToggle.UseVisualStyleBackColor = false;
             // 
-            // groupConfig
-            // 
-            this.groupConfig.Controls.Add(this.lblToggleKey);
-            this.groupConfig.Controls.Add(this.txtToggleKey);
-            this.groupConfig.Controls.Add(this.lblDelay);
-            this.groupConfig.Controls.Add(this.numDelay);
-            this.groupConfig.Controls.Add(this.lblDelayMs);
-            this.groupConfig.Controls.Add(this.chkAudioFeedback);
-            this.groupConfig.Location = new System.Drawing.Point(15, 15);
-            this.groupConfig.Name = "groupConfig";
-            this.groupConfig.Size = new System.Drawing.Size(260, 120);
-            this.groupConfig.TabIndex = 8;
-            this.groupConfig.TabStop = false;
-            this.groupConfig.Text = "Autoclick Mouse Right Configuration";
-            // 
-            // AutoclickMouseRightForm
+            // CustomForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(290, 185);
-            this.Controls.Add(this.groupConfig);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(563, 274);
             this.Controls.Add(this.btnToggle);
             this.Controls.Add(this.lblStatus);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "AutoclickMouseRightForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Autoclick Mouse Right";
+            this.Controls.Add(this.groupAutoclick);
+            this.Controls.Add(this.lblCustomPlaceholder);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "CustomForm";
+            this.Text = "Custom";
+            this.groupAutoclick.ResumeLayout(false);
+            this.groupAutoclick.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numDelay)).EndInit();
-            this.groupConfig.ResumeLayout(false);
-            this.groupConfig.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,6 +184,8 @@ namespace _4RTools.Forms
 
         #endregion
 
+        private System.Windows.Forms.Label lblCustomPlaceholder;
+        private System.Windows.Forms.GroupBox groupAutoclick;
         private System.Windows.Forms.Label lblToggleKey;
         private System.Windows.Forms.TextBox txtToggleKey;
         private System.Windows.Forms.Label lblDelay;
@@ -180,6 +194,5 @@ namespace _4RTools.Forms
         private System.Windows.Forms.CheckBox chkAudioFeedback;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Button btnToggle;
-        private System.Windows.Forms.GroupBox groupConfig;
     }
 }

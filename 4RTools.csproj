@@ -233,12 +233,6 @@
     <Compile Include="Forms\AHKForm.Designer.cs">
       <DependentUpon>AHKForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AutoclickMouseRightForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\AutoclickMouseRightForm.Designer.cs">
-      <DependentUpon>AutoclickMouseRightForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\ATKDEFForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -310,6 +304,12 @@
     </Compile>
     <Compile Include="Forms\Container.Designer.cs">
       <DependentUpon>Container.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CustomForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CustomForm.Designer.cs">
+      <DependentUpon>CustomForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ProfileForm.cs">
       <SubType>Form</SubType>
@@ -383,9 +383,6 @@
     <EmbeddedResource Include="Forms\AHKForm.resx">
       <DependentUpon>AHKForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AutoclickMouseRightForm.resx">
-      <DependentUpon>AutoclickMouseRightForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ATKDEFForm.resx">
       <DependentUpon>ATKDEFForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -422,6 +419,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Container.resx">
       <DependentUpon>Container.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomForm.resx">
+      <DependentUpon>CustomForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProfileForm.resx">
       <DependentUpon>ProfileForm.cs</DependentUpon>
