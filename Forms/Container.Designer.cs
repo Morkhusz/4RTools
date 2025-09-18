@@ -276,7 +276,7 @@ namespace _4RTools.Forms
             this.tabPageCustom.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageCustom.Size = new System.Drawing.Size(563, 274);
             this.tabPageCustom.TabIndex = 10;
-            this.tabPageCustom.Text = "Custom";
+            this.tabPageCustom.Text = "AutoClick";
             this.tabPageCustom.UseVisualStyleBackColor = true;
             // 
             // tabPageSpammer

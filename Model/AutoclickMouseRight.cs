@@ -32,12 +32,12 @@ namespace _4RTools.Model
                     _4RThread.Stop(this.thread);
                 }
 
-                // Register the toggle key if set
                 if (ToggleKey != Key.None)
                 {
                     Keys toggleKey = (Keys)Enum.Parse(typeof(Keys), ToggleKey.ToString());
-                    KeyboardHook.AddDown(toggleKey, new KeyboardHook.KeyPressed(this.ToggleActive));
+                    KeyboardHook.AddKeyDown(toggleKey, () => { ToggleActive(); return true; });
                 }
+
 
                 this.thread = new _4RThread(_ => AutoclickThreadExecution(roClient));
                 _4RThread.Start(this.thread);

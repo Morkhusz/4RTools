@@ -23,7 +23,7 @@ namespace _4RTools.Forms
 
         private void InitializeEvents()
         {
-            this.txtToggleKey.KeyDown += new KeyEventHandler(FormUtils.OnKeyDown);
+            this.txtToggleKey.KeyDown += new System.Windows.Forms.KeyEventHandler(FormUtils.OnKeyDown);
             this.txtToggleKey.KeyPress += new KeyPressEventHandler(FormUtils.OnKeyPress);
             this.txtToggleKey.TextChanged += new EventHandler(this.OnToggleKeyChange);
             this.numDelay.ValueChanged += new EventHandler(this.OnDelayChange);
@@ -83,7 +83,7 @@ namespace _4RTools.Forms
                     
                     // Register new key
                     Keys newKey = (Keys)Enum.Parse(typeof(Keys), key.ToString());
-                    KeyboardHook.AddDown(newKey, new KeyboardHook.KeyPressed(config.ToggleActive));
+                    KeyboardHook.AddKeyDown(newKey, () => { config.ToggleActive(); return true; });
                 }
                 else
                 {

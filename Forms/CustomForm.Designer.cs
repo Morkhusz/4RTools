@@ -52,7 +52,7 @@ namespace _4RTools.Forms
             this.lblCustomPlaceholder.Name = "lblCustomPlaceholder";
             this.lblCustomPlaceholder.Size = new System.Drawing.Size(300, 20);
             this.lblCustomPlaceholder.TabIndex = 0;
-            this.lblCustomPlaceholder.Text = "Custom Tab - Additional Features";
+            this.lblCustomPlaceholder.Text = "AutoClick";
             // 
             // groupAutoclick
             // 
@@ -67,7 +67,7 @@ namespace _4RTools.Forms
             this.groupAutoclick.Size = new System.Drawing.Size(300, 120);
             this.groupAutoclick.TabIndex = 1;
             this.groupAutoclick.TabStop = false;
-            this.groupAutoclick.Text = "Autoclick Mouse Right Configuration";
+            this.groupAutoclick.Text = "Mouse Right Configuration";
             // 
             // lblToggleKey
             // 
