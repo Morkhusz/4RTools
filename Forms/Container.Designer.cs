@@ -54,6 +54,7 @@ namespace _4RTools.Forms
             this.tabMacroSwitch = new System.Windows.Forms.TabPage();
             this.atkDef = new System.Windows.Forms.TabPage();
             this.tabPageMacroSongs = new System.Windows.Forms.TabPage();
+            this.tabPageCustom = new System.Windows.Forms.TabPage();
             this.tabPageSpammer = new System.Windows.Forms.TabPage();
             this.tabPageAutobuffStuff = new System.Windows.Forms.TabPage();
             this.tabPageAutobuffSkill = new System.Windows.Forms.TabPage();
@@ -268,6 +269,16 @@ namespace _4RTools.Forms
             this.tabPageMacroSongs.Text = "Macro Songs";
             this.tabPageMacroSongs.UseVisualStyleBackColor = true;
             // 
+            // tabPageCustom
+            // 
+            this.tabPageCustom.Location = new System.Drawing.Point(4, 22);
+            this.tabPageCustom.Name = "tabPageCustom";
+            this.tabPageCustom.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageCustom.Size = new System.Drawing.Size(563, 274);
+            this.tabPageCustom.TabIndex = 10;
+            this.tabPageCustom.Text = "AutoClick";
+            this.tabPageCustom.UseVisualStyleBackColor = true;
+            // 
             // tabPageSpammer
             // 
             this.tabPageSpammer.Location = new System.Drawing.Point(4, 22);
@@ -313,6 +324,7 @@ namespace _4RTools.Forms
             // 
             // atkDefMode
             // 
+            this.atkDefMode.Controls.Add(this.tabPageCustom);
             this.atkDefMode.Controls.Add(this.tabPageSpammer);
             this.atkDefMode.Controls.Add(this.tabDebuffRecovery);
             this.atkDefMode.Controls.Add(this.tabPageAutobuffSkill);
@@ -428,6 +440,7 @@ namespace _4RTools.Forms
         private TabPage tabMacroSwitch;
         private TabPage atkDef;
         private TabPage tabPageMacroSongs;
+        private TabPage tabPageCustom;
         private TabPage tabPageAutobuffStuff;
         private TabPage tabPageAutobuffSkill;
         private TabPage tabPageSpammer;
