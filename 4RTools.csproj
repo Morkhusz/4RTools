@@ -326,6 +326,7 @@
     <Compile Include="Model\Advertiser.cs" />
     <Compile Include="Model\AHK.cs" />
     <Compile Include="Model\ATKDEFMode.cs" />
+    <Compile Include="Model\AutoclickMouseLeft.cs" />
     <Compile Include="Model\Autopot.cs" />
     <Compile Include="Model\AutoclickMouseRight.cs" />
     <Compile Include="Model\Autobuff.cs" />
