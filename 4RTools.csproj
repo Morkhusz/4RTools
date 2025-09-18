@@ -233,6 +233,12 @@
     <Compile Include="Forms\AHKForm.Designer.cs">
       <DependentUpon>AHKForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AutoclickMouseRightForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AutoclickMouseRightForm.Designer.cs">
+      <DependentUpon>AutoclickMouseRightForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ATKDEFForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -321,6 +327,7 @@
     <Compile Include="Model\AHK.cs" />
     <Compile Include="Model\ATKDEFMode.cs" />
     <Compile Include="Model\Autopot.cs" />
+    <Compile Include="Model\AutoclickMouseRight.cs" />
     <Compile Include="Model\Autobuff.cs" />
     <Compile Include="Model\AutoRefreshSpammer.cs" />
     <Compile Include="Model\Buff.cs" />
@@ -375,6 +382,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AHKForm.resx">
       <DependentUpon>AHKForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AutoclickMouseRightForm.resx">
+      <DependentUpon>AutoclickMouseRightForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ATKDEFForm.resx">
       <DependentUpon>ATKDEFForm.cs</DependentUpon>
