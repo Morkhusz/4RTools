@@ -59,6 +59,23 @@ namespace _4RTools.Forms
             Refresh();
         }
 
+        // New method for adding forms to Panel containers
+        public void addformToPanel(Panel panel, Form f)
+        {
+            if (!panel.Controls.Contains(f))
+            {
+                f.TopLevel = false;
+                panel.Controls.Add(f);
+                // Position the form below the label
+                f.Location = new Point(0, 20);
+                f.Size = new Size(panel.Width - 2, panel.Height - 22);
+                f.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
+                f.Show();
+                panel.Refresh();
+            }
+            panel.Refresh();
+        }
+
         // New method for adding forms to the right content panel
         public void addformToPanel(Form f)
         {
@@ -253,7 +270,7 @@ namespace _4RTools.Forms
             frm.FormBorderStyle = FormBorderStyle.None;
             frm.MdiParent = this;
             frm.Show();
-            addform(this.tabPageAutopot, frm);
+            addformToPanel(this.panelAutopotContainer, frm);
         }
         public void SetAutopotYggWindow()
         {
@@ -261,7 +278,7 @@ namespace _4RTools.Forms
             frm.FormBorderStyle = FormBorderStyle.None;
             frm.MdiParent = this;
             frm.Show();
-            addform(this.tabPageYggAutopot, frm);
+            addformToPanel(this.panelYggdrasilContainer, frm);
         }
 
         public void SetSkillTimerWindow()

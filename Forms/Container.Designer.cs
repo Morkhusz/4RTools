@@ -45,9 +45,10 @@ namespace _4RTools.Forms
             this.lbPowered = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.tabControlAutopot = new System.Windows.Forms.TabControl();
-            this.tabPageAutopot = new System.Windows.Forms.TabPage();
-            this.tabPageYggAutopot = new System.Windows.Forms.TabPage();
+            this.panelAutopotContainer = new System.Windows.Forms.Panel();
+            this.panelYggdrasilContainer = new System.Windows.Forms.Panel();
+            this.lblAutopot = new System.Windows.Forms.Label();
+            this.lblYggdrasil = new System.Windows.Forms.Label();
             this.tabPageServer = new System.Windows.Forms.TabPage();
             this.tabPageProfiles = new System.Windows.Forms.TabPage();
             this.tabMacroSwitch = new System.Windows.Forms.TabPage();
@@ -76,7 +77,8 @@ namespace _4RTools.Forms
             this.lblCharacterName = new System.Windows.Forms.Label();
             this.OnOffPanel = new System.Windows.Forms.Panel();
             this.panelFooter.SuspendLayout();
-            this.tabControlAutopot.SuspendLayout();
+            this.panelAutopotContainer.SuspendLayout();
+            this.panelYggdrasilContainer.SuspendLayout();
             this.leftSidebarPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -194,36 +196,45 @@ namespace _4RTools.Forms
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 18;
             // 
-            // tabControlAutopot
+            // panelAutopotContainer
             // 
-            this.tabControlAutopot.Controls.Add(this.tabPageAutopot);
-            this.tabControlAutopot.Controls.Add(this.tabPageYggAutopot);
-            this.tabControlAutopot.ImageList = this.TabControlImageList;
-            this.tabControlAutopot.Location = new System.Drawing.Point(247, 83);
-            this.tabControlAutopot.Name = "tabControlAutopot";
-            this.tabControlAutopot.SelectedIndex = 0;
-            this.tabControlAutopot.Size = new System.Drawing.Size(267, 165);
-            this.tabControlAutopot.TabIndex = 25;
+            this.panelAutopotContainer.BackColor = System.Drawing.Color.LightGray;
+            this.panelAutopotContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelAutopotContainer.Controls.Add(this.lblAutopot);
+            this.panelAutopotContainer.Location = new System.Drawing.Point(247, 83);
+            this.panelAutopotContainer.Name = "panelAutopotContainer";
+            this.panelAutopotContainer.Size = new System.Drawing.Size(130, 165);
+            this.panelAutopotContainer.TabIndex = 25;
             // 
-            // tabPageAutopot
+            // panelYggdrasilContainer
             // 
-            this.tabPageAutopot.Location = new System.Drawing.Point(4, 22);
-            this.tabPageAutopot.Name = "tabPageAutopot";
-            this.tabPageAutopot.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAutopot.Size = new System.Drawing.Size(259, 139);
-            this.tabPageAutopot.TabIndex = 0;
-            this.tabPageAutopot.Text = "Autopot";
-            this.tabPageAutopot.UseVisualStyleBackColor = true;
+            this.panelYggdrasilContainer.BackColor = System.Drawing.Color.LightGray;
+            this.panelYggdrasilContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelYggdrasilContainer.Controls.Add(this.lblYggdrasil);
+            this.panelYggdrasilContainer.Location = new System.Drawing.Point(384, 83);
+            this.panelYggdrasilContainer.Name = "panelYggdrasilContainer";
+            this.panelYggdrasilContainer.Size = new System.Drawing.Size(130, 165);
+            this.panelYggdrasilContainer.TabIndex = 26;
             // 
-            // tabPageYggAutopot
+            // lblAutopot
             // 
-            this.tabPageYggAutopot.Location = new System.Drawing.Point(4, 22);
-            this.tabPageYggAutopot.Name = "tabPageYggAutopot";
-            this.tabPageYggAutopot.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageYggAutopot.Size = new System.Drawing.Size(259, 139);
-            this.tabPageYggAutopot.TabIndex = 3;
-            this.tabPageYggAutopot.Text = "Yggdrasil";
-            this.tabPageYggAutopot.UseVisualStyleBackColor = true;
+            this.lblAutopot.AutoSize = true;
+            this.lblAutopot.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAutopot.Location = new System.Drawing.Point(3, 3);
+            this.lblAutopot.Name = "lblAutopot";
+            this.lblAutopot.Size = new System.Drawing.Size(50, 13);
+            this.lblAutopot.TabIndex = 0;
+            this.lblAutopot.Text = "Autopot";
+            // 
+            // lblYggdrasil
+            // 
+            this.lblYggdrasil.AutoSize = true;
+            this.lblYggdrasil.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblYggdrasil.Location = new System.Drawing.Point(3, 3);
+            this.lblYggdrasil.Name = "lblYggdrasil";
+            this.lblYggdrasil.Size = new System.Drawing.Size(61, 13);
+            this.lblYggdrasil.TabIndex = 0;
+            this.lblYggdrasil.Text = "Yggdrasil";
             // 
             // tabPageServer
             // 
@@ -563,7 +574,8 @@ namespace _4RTools.Forms
             this.Controls.Add(this.OnOffPanel);
             this.Controls.Add(this.characterName);
             this.Controls.Add(this.lblCharacterName);
-            this.Controls.Add(this.tabControlAutopot);
+            this.Controls.Add(this.panelYggdrasilContainer);
+            this.Controls.Add(this.panelAutopotContainer);
             this.Controls.Add(this.panelFooter);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel4);
@@ -583,7 +595,8 @@ namespace _4RTools.Forms
             this.Resize += new System.EventHandler(this.containerResize);
             this.panelFooter.ResumeLayout(false);
             this.panelFooter.PerformLayout();
-            this.tabControlAutopot.ResumeLayout(false);
+            this.panelAutopotContainer.ResumeLayout(false);
+            this.panelYggdrasilContainer.ResumeLayout(false);
             this.leftSidebarPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -602,9 +615,10 @@ namespace _4RTools.Forms
         private System.Windows.Forms.Panel panelFooter;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label1;
-        private TabControl tabControlAutopot;
-        private TabPage tabPageAutopot;
-        private TabPage tabPageYggAutopot;
+        private Panel panelAutopotContainer;
+        private Panel panelYggdrasilContainer;
+        private Label lblAutopot;
+        private Label lblYggdrasil;
         private ImageList TabControlImageList;
         private TabPage tabPageServer;
         private TabPage tabPageProfiles;
