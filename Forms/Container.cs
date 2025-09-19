@@ -13,6 +13,7 @@ namespace _4RTools.Forms
 
         private Subject subject = new Subject();
         private string currentProfile;
+        private Button currentActiveButton;
         public Container()
         {
             this.subject.Attach(this);
@@ -89,8 +90,12 @@ namespace _4RTools.Forms
             this.rightContentPanel.Controls.Add(f);
             f.Show();
             
-            // Reset all button styles
+            // Reset all button styles and restore the active button
             ResetButtonStyles();
+            if (currentActiveButton != null)
+            {
+                currentActiveButton.BackColor = Color.DarkBlue;
+            }
         }
 
         private void ResetButtonStyles()
@@ -108,6 +113,7 @@ namespace _4RTools.Forms
         {
             ResetButtonStyles();
             activeButton.BackColor = Color.DarkBlue;
+            currentActiveButton = activeButton;
         }
 
         private void SetBackGroundColorOfMDIForm()
