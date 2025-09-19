@@ -283,111 +283,79 @@ namespace _4RTools.Forms
 
         public void SetSkillTimerWindow()
         {
-            SkillTimerForm frm = new SkillTimerForm(subject);
-            frm.FormBorderStyle = FormBorderStyle.None;
-            frm.MdiParent = this;
-            frm.Show();
-            addform(this.tabSkillTimer, frm);
+            // This method is no longer used in the new sidebar UI layout
+            // Forms are now created on-demand when buttons are clicked
+            // keeping method for backward compatibility but no longer initializing forms
         }
 
         public void SetProfileWindow()
         {
-            ProfileForm frm = new ProfileForm(this);
-            frm.FormBorderStyle = FormBorderStyle.None;
-            frm.Location = new Point(0, 65);
-            frm.MdiParent = this;
-            frm.Show();
-            addform(this.tabPageProfiles, frm);
+            // This method is no longer used in the new sidebar UI layout
+            // Forms are now created on-demand when buttons are clicked
+            // keeping method for backward compatibility but no longer initializing forms
         }
 
         public void SetServerWindow()
         {
-            ServersForm frm = new ServersForm(subject);
-            frm.FormBorderStyle = FormBorderStyle.None;
-            frm.Location = new Point(0, 65);
-            frm.MdiParent = this;
-            frm.Show();
-            addform(this.tabPageServer, frm);
+            // This method is no longer used in the new sidebar UI layout
+            // Forms are now created on-demand when buttons are clicked
+            // keeping method for backward compatibility but no longer initializing forms
         }
 
         public void SetAHKWindow()
         {
-            AHKForm frm = new AHKForm(subject);
-            frm.FormBorderStyle = FormBorderStyle.None;
-            frm.Location = new Point(0, 65);
-            frm.MdiParent = this;
-            frm.Show();
-            addform(this.tabPageSpammer, frm);
+            // This method is no longer used in the new sidebar UI layout
+            // Forms are now created on-demand when buttons are clicked
+            // keeping method for backward compatibility but no longer initializing forms
         }
 
         public void SetCustomWindow()
         {
-            CustomForm frm = new CustomForm(subject);
-            frm.FormBorderStyle = FormBorderStyle.None;
-            frm.Location = new Point(0, 65);
-            frm.MdiParent = this;
-            frm.Show();
-            addform(this.tabPageCustom, frm);
+            // This method is no longer used in the new sidebar UI layout
+            // Forms are now created on-demand when buttons are clicked
+            // keeping method for backward compatibility but no longer initializing forms
         }
 
         public void SetAutobuffSkillWindow()
         {
-            SkillAutoBuffForm frm = new SkillAutoBuffForm(subject);
-            frm.FormBorderStyle = FormBorderStyle.None;
-            frm.Location = new Point(0, 65);
-            frm.MdiParent = this;
-            addform(this.tabPageAutobuffSkill, frm);
-            frm.Show();
+            // This method is no longer used in the new sidebar UI layout
+            // Forms are now created on-demand when buttons are clicked
+            // keeping method for backward compatibility but no longer initializing forms
         }
 
         public void SetAutobuffStuffWindow()
         {
-            StuffAutoBuffForm frm = new StuffAutoBuffForm(subject);
-            frm.FormBorderStyle = FormBorderStyle.None;
-            frm.Location = new Point(0, 65);
-            frm.MdiParent = this;
-            frm.Show();
-            addform(this.tabPageAutobuffStuff, frm);
+            // This method is no longer used in the new sidebar UI layout
+            // Forms are now created on-demand when buttons are clicked
+            // keeping method for backward compatibility but no longer initializing forms
         }
 
         public void SetDebuffRecoveryWindow()
         {
-            DebuffRecoveryForm frm = new DebuffRecoveryForm(subject);
-            frm.FormBorderStyle = FormBorderStyle.None;
-            frm.Location = new Point(0, 65);
-            frm.MdiParent = this;
-            frm.Show();
-            addform(this.tabDebuffRecovery, frm);
+            // This method is no longer used in the new sidebar UI layout
+            // Forms are now created on-demand when buttons are clicked
+            // keeping method for backward compatibility but no longer initializing forms
         }
 
         public void SetSongMacroWindow()
         {
-            MacroSongForm frm = new MacroSongForm(subject);
-            frm.FormBorderStyle = FormBorderStyle.None;
-            frm.Location = new Point(0, 65);
-            frm.MdiParent = this;
-            addform(this.tabPageMacroSongs, frm);
-            frm.Show();
+            // This method is no longer used in the new sidebar UI layout
+            // Forms are now created on-demand when buttons are clicked
+            // keeping method for backward compatibility but no longer initializing forms
         }
 
         public void SetATKDEFWindow()
         {
-            ATKDEFForm frm = new ATKDEFForm(subject);
-            frm.FormBorderStyle = FormBorderStyle.None;
-            frm.Location = new Point(0, 65);
-            frm.MdiParent = this;
-            addform(this.atkDef, frm);
-            frm.Show();
+            // This method is no longer used in the new sidebar UI layout
+            // Forms are now created on-demand when buttons are clicked
+            // keeping method for backward compatibility but no longer initializing forms
         }
 
         public void SetMacroSwitchWindow()
         {
-            MacroSwitchForm frm = new MacroSwitchForm(subject);
-            frm.FormBorderStyle = FormBorderStyle.None;
-            frm.Location = new Point(0, 65);
-            frm.MdiParent = this;
-            addform(this.tabMacroSwitch, frm);
-            frm.Show();
+            // This method is no longer used in the new sidebar UI layout
+            // Forms are now created on-demand when buttons are clicked
+            // keeping method for backward compatibility but no longer initializing forms
         }
 
         #region Button Click Events
