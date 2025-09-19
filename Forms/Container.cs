@@ -503,7 +503,7 @@ namespace _4RTools.Forms
 
         }
 
-        private void lblCharacterName_Click(object sender, EventArgs e)
+        private void panelAutopotContainer_Paint(object sender, PaintEventArgs e)
         {
 
         }

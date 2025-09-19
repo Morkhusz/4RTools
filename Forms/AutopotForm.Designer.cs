@@ -50,7 +50,7 @@
             // txtHPpct
             // 
             this.txtHPpct.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtHPpct.Location = new System.Drawing.Point(168, 32);
+            this.txtHPpct.Location = new System.Drawing.Point(168, 11);
             this.txtHPpct.Name = "txtHPpct";
             this.txtHPpct.Size = new System.Drawing.Size(44, 23);
             this.txtHPpct.TabIndex = 39;
@@ -60,7 +60,7 @@
             // 
             this.labelSP.AutoSize = true;
             this.labelSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelSP.Location = new System.Drawing.Point(214, 60);
+            this.labelSP.Location = new System.Drawing.Point(214, 39);
             this.labelSP.Name = "labelSP";
             this.labelSP.Size = new System.Drawing.Size(20, 17);
             this.labelSP.TabIndex = 38;
@@ -70,7 +70,7 @@
             // 
             this.labelHP.AutoSize = true;
             this.labelHP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelHP.Location = new System.Drawing.Point(214, 35);
+            this.labelHP.Location = new System.Drawing.Point(214, 14);
             this.labelHP.Name = "labelHP";
             this.labelHP.Size = new System.Drawing.Size(20, 17);
             this.labelHP.TabIndex = 37;
@@ -79,7 +79,7 @@
             // txtAutopotDelay
             // 
             this.txtAutopotDelay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtAutopotDelay.Location = new System.Drawing.Point(168, 84);
+            this.txtAutopotDelay.Location = new System.Drawing.Point(168, 63);
             this.txtAutopotDelay.Name = "txtAutopotDelay";
             this.txtAutopotDelay.Size = new System.Drawing.Size(44, 23);
             this.txtAutopotDelay.TabIndex = 36;
@@ -88,7 +88,7 @@
             // picBoxSP
             // 
             this.picBoxSP.Image = global::_4RTools.Resources._4RTools.ETCResource.SP;
-            this.picBoxSP.Location = new System.Drawing.Point(61, 57);
+            this.picBoxSP.Location = new System.Drawing.Point(61, 36);
             this.picBoxSP.Name = "picBoxSP";
             this.picBoxSP.Size = new System.Drawing.Size(25, 25);
             this.picBoxSP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -98,7 +98,7 @@
             // picBoxHP
             // 
             this.picBoxHP.Image = global::_4RTools.Resources._4RTools.ETCResource.HP;
-            this.picBoxHP.Location = new System.Drawing.Point(61, 31);
+            this.picBoxHP.Location = new System.Drawing.Point(61, 10);
             this.picBoxHP.Name = "picBoxHP";
             this.picBoxHP.Size = new System.Drawing.Size(25, 25);
             this.picBoxHP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -109,7 +109,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label2.Location = new System.Drawing.Point(124, 87);
+            this.label2.Location = new System.Drawing.Point(124, 66);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 17);
             this.label2.TabIndex = 41;
@@ -119,7 +119,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label1.Location = new System.Drawing.Point(213, 87);
+            this.label1.Location = new System.Drawing.Point(213, 66);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(26, 17);
             this.label1.TabIndex = 42;
@@ -128,7 +128,7 @@
             // txtHpKey
             // 
             this.txtHpKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtHpKey.Location = new System.Drawing.Point(106, 32);
+            this.txtHpKey.Location = new System.Drawing.Point(106, 11);
             this.txtHpKey.Name = "txtHpKey";
             this.txtHpKey.Size = new System.Drawing.Size(61, 23);
             this.txtHpKey.TabIndex = 43;
@@ -136,7 +136,7 @@
             // txtSPKey
             // 
             this.txtSPKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtSPKey.Location = new System.Drawing.Point(106, 58);
+            this.txtSPKey.Location = new System.Drawing.Point(106, 37);
             this.txtSPKey.Name = "txtSPKey";
             this.txtSPKey.Size = new System.Drawing.Size(61, 23);
             this.txtSPKey.TabIndex = 44;
@@ -144,7 +144,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(84, 37);
+            this.label3.Location = new System.Drawing.Point(84, 16);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(22, 13);
             this.label3.TabIndex = 45;
@@ -153,7 +153,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(85, 63);
+            this.label4.Location = new System.Drawing.Point(85, 42);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(21, 13);
             this.label4.TabIndex = 46;
@@ -162,7 +162,7 @@
             // txtSPpct
             // 
             this.txtSPpct.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtSPpct.Location = new System.Drawing.Point(168, 58);
+            this.txtSPpct.Location = new System.Drawing.Point(168, 37);
             this.txtSPpct.Name = "txtSPpct";
             this.txtSPpct.Size = new System.Drawing.Size(44, 23);
             this.txtSPpct.TabIndex = 40;

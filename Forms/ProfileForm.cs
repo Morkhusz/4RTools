@@ -100,5 +100,10 @@ namespace _4RTools.Forms
                 this.container.refreshProfileList();
             }
         }
+
+        private void ProfileForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

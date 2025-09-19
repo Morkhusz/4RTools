@@ -51,21 +51,23 @@ namespace _4RTools.Forms
             this.cbAudio.AutoSize = true;
             this.cbAudio.Checked = true;
             this.cbAudio.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbAudio.Location = new System.Drawing.Point(66, 3);
+            this.cbAudio.Location = new System.Drawing.Point(4, 1);
             this.cbAudio.Name = "cbAudio";
-            this.cbAudio.Size = new System.Drawing.Size(57, 17);
+            this.cbAudio.Size = new System.Drawing.Size(107, 17);
             this.cbAudio.TabIndex = 28;
-            this.cbAudio.Text = "Sound";
+            this.cbAudio.Text = "Som de Ativação";
             this.cbAudio.UseVisualStyleBackColor = true;
+            this.cbAudio.CheckedChanged += new System.EventHandler(this.cbAudio_CheckedChanged_1);
             // 
             // txtStatusToggleKey
             // 
             this.txtStatusToggleKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtStatusToggleKey.Location = new System.Drawing.Point(64, 39);
+            this.txtStatusToggleKey.Location = new System.Drawing.Point(6, 38);
             this.txtStatusToggleKey.Name = "txtStatusToggleKey";
-            this.txtStatusToggleKey.Size = new System.Drawing.Size(61, 23);
+            this.txtStatusToggleKey.Size = new System.Drawing.Size(112, 23);
             this.txtStatusToggleKey.TabIndex = 27;
             this.txtStatusToggleKey.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtStatusToggleKey.TextChanged += new System.EventHandler(this.txtStatusToggleKey_TextChanged_1);
             // 
             // btnStatusToggle
             // 
@@ -74,24 +76,25 @@ namespace _4RTools.Forms
             this.btnStatusToggle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStatusToggle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStatusToggle.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnStatusToggle.Location = new System.Drawing.Point(128, 0);
+            this.btnStatusToggle.Location = new System.Drawing.Point(167, 1);
             this.btnStatusToggle.Margin = new System.Windows.Forms.Padding(0);
             this.btnStatusToggle.Name = "btnStatusToggle";
-            this.btnStatusToggle.Size = new System.Drawing.Size(98, 65);
+            this.btnStatusToggle.Size = new System.Drawing.Size(190, 65);
             this.btnStatusToggle.TabIndex = 25;
             this.btnStatusToggle.Text = "OFF";
             this.btnStatusToggle.UseVisualStyleBackColor = false;
+            this.btnStatusToggle.Click += new System.EventHandler(this.btnStatusToggle_Click);
             // 
             // lblStatusToggle
             // 
             this.lblStatusToggle.AllowDrop = true;
             this.lblStatusToggle.AutoSize = true;
-            this.lblStatusToggle.Location = new System.Drawing.Point(77, 23);
+            this.lblStatusToggle.Location = new System.Drawing.Point(21, 19);
             this.lblStatusToggle.MaximumSize = new System.Drawing.Size(109, 30);
             this.lblStatusToggle.Name = "lblStatusToggle";
-            this.lblStatusToggle.Size = new System.Drawing.Size(34, 13);
+            this.lblStatusToggle.Size = new System.Drawing.Size(94, 13);
             this.lblStatusToggle.TabIndex = 26;
-            this.lblStatusToggle.Text = "Tecla";
+            this.lblStatusToggle.Text = "Tecla de Ativação";
             this.lblStatusToggle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ToggleApplicationStateForm
@@ -99,7 +102,7 @@ namespace _4RTools.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(226, 114);
+            this.ClientSize = new System.Drawing.Size(360, 114);
             this.Controls.Add(this.cbAudio);
             this.Controls.Add(this.txtStatusToggleKey);
             this.Controls.Add(this.btnStatusToggle);

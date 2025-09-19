@@ -46,8 +46,8 @@ namespace _4RTools.Forms
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panelAutopotContainer = new System.Windows.Forms.Panel();
-            this.panelYggdrasilContainer = new System.Windows.Forms.Panel();
             this.lblAutopot = new System.Windows.Forms.Label();
+            this.panelYggdrasilContainer = new System.Windows.Forms.Panel();
             this.lblYggdrasil = new System.Windows.Forms.Label();
             this.tabPageServer = new System.Windows.Forms.TabPage();
             this.tabPageProfiles = new System.Windows.Forms.TabPage();
@@ -201,20 +201,11 @@ namespace _4RTools.Forms
             this.panelAutopotContainer.BackColor = System.Drawing.Color.LightGray;
             this.panelAutopotContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelAutopotContainer.Controls.Add(this.lblAutopot);
-            this.panelAutopotContainer.Location = new System.Drawing.Point(247, 83);
+            this.panelAutopotContainer.Location = new System.Drawing.Point(247, 140);
             this.panelAutopotContainer.Name = "panelAutopotContainer";
-            this.panelAutopotContainer.Size = new System.Drawing.Size(130, 165);
+            this.panelAutopotContainer.Size = new System.Drawing.Size(315, 115);
             this.panelAutopotContainer.TabIndex = 25;
-            // 
-            // panelYggdrasilContainer
-            // 
-            this.panelYggdrasilContainer.BackColor = System.Drawing.Color.LightGray;
-            this.panelYggdrasilContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelYggdrasilContainer.Controls.Add(this.lblYggdrasil);
-            this.panelYggdrasilContainer.Location = new System.Drawing.Point(384, 83);
-            this.panelYggdrasilContainer.Name = "panelYggdrasilContainer";
-            this.panelYggdrasilContainer.Size = new System.Drawing.Size(130, 165);
-            this.panelYggdrasilContainer.TabIndex = 26;
+            this.panelAutopotContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelAutopotContainer_Paint);
             // 
             // lblAutopot
             // 
@@ -222,9 +213,19 @@ namespace _4RTools.Forms
             this.lblAutopot.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAutopot.Location = new System.Drawing.Point(3, 3);
             this.lblAutopot.Name = "lblAutopot";
-            this.lblAutopot.Size = new System.Drawing.Size(50, 13);
+            this.lblAutopot.Size = new System.Drawing.Size(51, 13);
             this.lblAutopot.TabIndex = 0;
             this.lblAutopot.Text = "Autopot";
+            // 
+            // panelYggdrasilContainer
+            // 
+            this.panelYggdrasilContainer.BackColor = System.Drawing.Color.LightGray;
+            this.panelYggdrasilContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelYggdrasilContainer.Controls.Add(this.lblYggdrasil);
+            this.panelYggdrasilContainer.Location = new System.Drawing.Point(567, 140);
+            this.panelYggdrasilContainer.Name = "panelYggdrasilContainer";
+            this.panelYggdrasilContainer.Size = new System.Drawing.Size(315, 115);
+            this.panelYggdrasilContainer.TabIndex = 26;
             // 
             // lblYggdrasil
             // 
@@ -232,7 +233,7 @@ namespace _4RTools.Forms
             this.lblYggdrasil.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblYggdrasil.Location = new System.Drawing.Point(3, 3);
             this.lblYggdrasil.Name = "lblYggdrasil";
-            this.lblYggdrasil.Size = new System.Drawing.Size(61, 13);
+            this.lblYggdrasil.Size = new System.Drawing.Size(59, 13);
             this.lblYggdrasil.TabIndex = 0;
             this.lblYggdrasil.Text = "Yggdrasil";
             // 
@@ -537,7 +538,7 @@ namespace _4RTools.Forms
             this.characterName.AutoSize = true;
             this.characterName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.characterName.ForeColor = System.Drawing.Color.DarkGreen;
-            this.characterName.Location = new System.Drawing.Point(445, 32);
+            this.characterName.Location = new System.Drawing.Point(359, 106);
             this.characterName.Name = "characterName";
             this.characterName.Size = new System.Drawing.Size(25, 17);
             this.characterName.TabIndex = 28;
@@ -548,18 +549,17 @@ namespace _4RTools.Forms
             // 
             this.lblCharacterName.AutoSize = true;
             this.lblCharacterName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCharacterName.Location = new System.Drawing.Point(445, 10);
+            this.lblCharacterName.Location = new System.Drawing.Point(244, 106);
             this.lblCharacterName.Name = "lblCharacterName";
             this.lblCharacterName.Size = new System.Drawing.Size(94, 17);
             this.lblCharacterName.TabIndex = 27;
             this.lblCharacterName.Text = "Char Logado:";
-            this.lblCharacterName.Click += new System.EventHandler(this.lblCharacterName_Click);
             // 
             // OnOffPanel
             // 
-            this.OnOffPanel.Location = new System.Drawing.Point(669, 0);
+            this.OnOffPanel.Location = new System.Drawing.Point(532, 2);
             this.OnOffPanel.Name = "OnOffPanel";
-            this.OnOffPanel.Size = new System.Drawing.Size(223, 64);
+            this.OnOffPanel.Size = new System.Drawing.Size(360, 62);
             this.OnOffPanel.TabIndex = 29;
             this.OnOffPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.OnOffPanel_Paint);
             // 
@@ -569,13 +569,13 @@ namespace _4RTools.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(894, 770);
+            this.Controls.Add(this.panelAutopotContainer);
             this.Controls.Add(this.rightContentPanel);
             this.Controls.Add(this.leftSidebarPanel);
             this.Controls.Add(this.OnOffPanel);
             this.Controls.Add(this.characterName);
             this.Controls.Add(this.lblCharacterName);
             this.Controls.Add(this.panelYggdrasilContainer);
-            this.Controls.Add(this.panelAutopotContainer);
             this.Controls.Add(this.panelFooter);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel4);
@@ -596,7 +596,9 @@ namespace _4RTools.Forms
             this.panelFooter.ResumeLayout(false);
             this.panelFooter.PerformLayout();
             this.panelAutopotContainer.ResumeLayout(false);
+            this.panelAutopotContainer.PerformLayout();
             this.panelYggdrasilContainer.ResumeLayout(false);
+            this.panelYggdrasilContainer.PerformLayout();
             this.leftSidebarPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

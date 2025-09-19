@@ -141,5 +141,20 @@ namespace _4RTools.Forms
         {
 
         }
+
+        private void cbAudio_CheckedChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnStatusToggle_Click(object sender, EventArgs e)
+        {
+            this.toggleStatus();
+        }
+
+        private void txtStatusToggleKey_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
