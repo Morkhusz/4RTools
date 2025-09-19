@@ -40,6 +40,9 @@ namespace _4RTools.Forms
             SetMacroSwitchWindow();
             SetServerWindow();
 
+            // Initialize the right panel with the first option (AutoClick)
+            this.btnAutoClick_Click(this.btnAutoClick, EventArgs.Empty);
+
             TrackerSingleton.Instance().SendEvent("desktop_login", "page_view", "desktop_container_load");
         }
 
@@ -54,6 +57,40 @@ namespace _4RTools.Forms
                 Refresh();
             }
             Refresh();
+        }
+
+        // New method for adding forms to the right content panel
+        public void addformToPanel(Form f)
+        {
+            // Clear the existing content
+            this.rightContentPanel.Controls.Clear();
+            
+            // Add the new form
+            f.TopLevel = false;
+            f.FormBorderStyle = FormBorderStyle.None;
+            f.Dock = DockStyle.Fill;
+            this.rightContentPanel.Controls.Add(f);
+            f.Show();
+            
+            // Reset all button styles
+            ResetButtonStyles();
+        }
+
+        private void ResetButtonStyles()
+        {
+            foreach (Control control in this.leftSidebarPanel.Controls)
+            {
+                if (control is Button btn)
+                {
+                    btn.BackColor = Color.Gray;
+                }
+            }
+        }
+
+        private void SetActiveButton(Button activeButton)
+        {
+            ResetButtonStyles();
+            activeButton.BackColor = Color.DarkBlue;
         }
 
         private void SetBackGroundColorOfMDIForm()
@@ -335,6 +372,88 @@ namespace _4RTools.Forms
             addform(this.tabMacroSwitch, frm);
             frm.Show();
         }
+
+        #region Button Click Events
+        
+        private void btnAutoClick_Click(object sender, EventArgs e)
+        {
+            SetActiveButton(this.btnAutoClick);
+            CustomForm frm = new CustomForm(subject);
+            addformToPanel(frm);
+        }
+
+        private void btnSkillSpammer_Click(object sender, EventArgs e)
+        {
+            SetActiveButton(this.btnSkillSpammer);
+            AHKForm frm = new AHKForm(subject);
+            addformToPanel(frm);
+        }
+
+        private void btnDebuff_Click(object sender, EventArgs e)
+        {
+            SetActiveButton(this.btnDebuff);
+            DebuffRecoveryForm frm = new DebuffRecoveryForm(subject);
+            addformToPanel(frm);
+        }
+
+        private void btnAutobuffSkill_Click(object sender, EventArgs e)
+        {
+            SetActiveButton(this.btnAutobuffSkill);
+            SkillAutoBuffForm frm = new SkillAutoBuffForm(subject);
+            addformToPanel(frm);
+        }
+
+        private void btnAutobuffStuff_Click(object sender, EventArgs e)
+        {
+            SetActiveButton(this.btnAutobuffStuff);
+            StuffAutoBuffForm frm = new StuffAutoBuffForm(subject);
+            addformToPanel(frm);
+        }
+
+        private void btnSkillTimer_Click(object sender, EventArgs e)
+        {
+            SetActiveButton(this.btnSkillTimer);
+            SkillTimerForm frm = new SkillTimerForm(subject);
+            addformToPanel(frm);
+        }
+
+        private void btnMacroSwitch_Click(object sender, EventArgs e)
+        {
+            SetActiveButton(this.btnMacroSwitch);
+            MacroSwitchForm frm = new MacroSwitchForm(subject);
+            addformToPanel(frm);
+        }
+
+        private void btnMacroSongs_Click(object sender, EventArgs e)
+        {
+            SetActiveButton(this.btnMacroSongs);
+            MacroSongForm frm = new MacroSongForm(subject);
+            addformToPanel(frm);
+        }
+
+        private void btnATKDEF_Click(object sender, EventArgs e)
+        {
+            SetActiveButton(this.btnATKDEF);
+            ATKDEFForm frm = new ATKDEFForm(subject);
+            addformToPanel(frm);
+        }
+
+        private void btnProfiles_Click(object sender, EventArgs e)
+        {
+            SetActiveButton(this.btnProfiles);
+            ProfileForm frm = new ProfileForm(this);
+            addformToPanel(frm);
+        }
+
+        private void btnServers_Click(object sender, EventArgs e)
+        {
+            SetActiveButton(this.btnServers);
+            ServersForm frm = new ServersForm(subject);
+            addformToPanel(frm);
+        }
+
+        #endregion
+
         #endregion
     }
 }

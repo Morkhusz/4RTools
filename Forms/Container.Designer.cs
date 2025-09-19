@@ -59,14 +59,26 @@ namespace _4RTools.Forms
             this.tabPageAutobuffStuff = new System.Windows.Forms.TabPage();
             this.tabPageAutobuffSkill = new System.Windows.Forms.TabPage();
             this.tabSkillTimer = new System.Windows.Forms.TabPage();
-            this.atkDefMode = new System.Windows.Forms.TabControl();
             this.tabDebuffRecovery = new System.Windows.Forms.TabPage();
+            this.leftSidebarPanel = new System.Windows.Forms.Panel();
+            this.rightContentPanel = new System.Windows.Forms.Panel();
+            this.btnAutoClick = new System.Windows.Forms.Button();
+            this.btnSkillSpammer = new System.Windows.Forms.Button();
+            this.btnDebuff = new System.Windows.Forms.Button();
+            this.btnAutobuffSkill = new System.Windows.Forms.Button();
+            this.btnAutobuffStuff = new System.Windows.Forms.Button();
+            this.btnSkillTimer = new System.Windows.Forms.Button();
+            this.btnMacroSwitch = new System.Windows.Forms.Button();
+            this.btnMacroSongs = new System.Windows.Forms.Button();
+            this.btnATKDEF = new System.Windows.Forms.Button();
+            this.btnProfiles = new System.Windows.Forms.Button();
+            this.btnServers = new System.Windows.Forms.Button();
             this.characterName = new System.Windows.Forms.Label();
             this.lblCharacterName = new System.Windows.Forms.Label();
             this.OnOffPanel = new System.Windows.Forms.Panel();
             this.panelFooter.SuspendLayout();
             this.tabControlAutopot.SuspendLayout();
-            this.atkDefMode.SuspendLayout();
+            this.leftSidebarPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblProcessName
@@ -322,24 +334,186 @@ namespace _4RTools.Forms
             this.tabSkillTimer.Text = "Skill timers";
             this.tabSkillTimer.UseVisualStyleBackColor = true;
             // 
-            // atkDefMode
+            // leftSidebarPanel
             // 
-            this.atkDefMode.Controls.Add(this.tabPageCustom);
-            this.atkDefMode.Controls.Add(this.tabPageSpammer);
-            this.atkDefMode.Controls.Add(this.tabDebuffRecovery);
-            this.atkDefMode.Controls.Add(this.tabPageAutobuffSkill);
-            this.atkDefMode.Controls.Add(this.tabPageAutobuffStuff);
-            this.atkDefMode.Controls.Add(this.tabSkillTimer);
-            this.atkDefMode.Controls.Add(this.tabMacroSwitch);
-            this.atkDefMode.Controls.Add(this.tabPageMacroSongs);
-            this.atkDefMode.Controls.Add(this.atkDef);
-            this.atkDefMode.Controls.Add(this.tabPageProfiles);
-            this.atkDefMode.Controls.Add(this.tabPageServer);
-            this.atkDefMode.Location = new System.Drawing.Point(15, 274);
-            this.atkDefMode.Name = "atkDefMode";
-            this.atkDefMode.SelectedIndex = 0;
-            this.atkDefMode.Size = new System.Drawing.Size(571, 300);
-            this.atkDefMode.TabIndex = 4;
+            this.leftSidebarPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.leftSidebarPanel.Controls.Add(this.btnServers);
+            this.leftSidebarPanel.Controls.Add(this.btnProfiles);
+            this.leftSidebarPanel.Controls.Add(this.btnATKDEF);
+            this.leftSidebarPanel.Controls.Add(this.btnMacroSongs);
+            this.leftSidebarPanel.Controls.Add(this.btnMacroSwitch);
+            this.leftSidebarPanel.Controls.Add(this.btnSkillTimer);
+            this.leftSidebarPanel.Controls.Add(this.btnAutobuffStuff);
+            this.leftSidebarPanel.Controls.Add(this.btnAutobuffSkill);
+            this.leftSidebarPanel.Controls.Add(this.btnDebuff);
+            this.leftSidebarPanel.Controls.Add(this.btnSkillSpammer);
+            this.leftSidebarPanel.Controls.Add(this.btnAutoClick);
+            this.leftSidebarPanel.Location = new System.Drawing.Point(15, 274);
+            this.leftSidebarPanel.Name = "leftSidebarPanel";
+            this.leftSidebarPanel.Size = new System.Drawing.Size(150, 300);
+            this.leftSidebarPanel.TabIndex = 30;
+            // 
+            // rightContentPanel
+            // 
+            this.rightContentPanel.BackColor = System.Drawing.Color.White;
+            this.rightContentPanel.Location = new System.Drawing.Point(175, 274);
+            this.rightContentPanel.Name = "rightContentPanel";
+            this.rightContentPanel.Size = new System.Drawing.Size(411, 300);
+            this.rightContentPanel.TabIndex = 31;
+            // 
+            // btnAutoClick
+            // 
+            this.btnAutoClick.BackColor = System.Drawing.Color.Gray;
+            this.btnAutoClick.FlatAppearance.BorderSize = 0;
+            this.btnAutoClick.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAutoClick.ForeColor = System.Drawing.Color.White;
+            this.btnAutoClick.Location = new System.Drawing.Point(5, 5);
+            this.btnAutoClick.Name = "btnAutoClick";
+            this.btnAutoClick.Size = new System.Drawing.Size(140, 25);
+            this.btnAutoClick.TabIndex = 0;
+            this.btnAutoClick.Text = "AutoClick";
+            this.btnAutoClick.UseVisualStyleBackColor = false;
+            this.btnAutoClick.Click += new System.EventHandler(this.btnAutoClick_Click);
+            // 
+            // btnSkillSpammer
+            // 
+            this.btnSkillSpammer.BackColor = System.Drawing.Color.Gray;
+            this.btnSkillSpammer.FlatAppearance.BorderSize = 0;
+            this.btnSkillSpammer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSkillSpammer.ForeColor = System.Drawing.Color.White;
+            this.btnSkillSpammer.Location = new System.Drawing.Point(5, 30);
+            this.btnSkillSpammer.Name = "btnSkillSpammer";
+            this.btnSkillSpammer.Size = new System.Drawing.Size(140, 25);
+            this.btnSkillSpammer.TabIndex = 1;
+            this.btnSkillSpammer.Text = "Skill Spammer";
+            this.btnSkillSpammer.UseVisualStyleBackColor = false;
+            this.btnSkillSpammer.Click += new System.EventHandler(this.btnSkillSpammer_Click);
+            // 
+            // btnDebuff
+            // 
+            this.btnDebuff.BackColor = System.Drawing.Color.Gray;
+            this.btnDebuff.FlatAppearance.BorderSize = 0;
+            this.btnDebuff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDebuff.ForeColor = System.Drawing.Color.White;
+            this.btnDebuff.Location = new System.Drawing.Point(5, 55);
+            this.btnDebuff.Name = "btnDebuff";
+            this.btnDebuff.Size = new System.Drawing.Size(140, 25);
+            this.btnDebuff.TabIndex = 2;
+            this.btnDebuff.Text = "Debuff";
+            this.btnDebuff.UseVisualStyleBackColor = false;
+            this.btnDebuff.Click += new System.EventHandler(this.btnDebuff_Click);
+            // 
+            // btnAutobuffSkill
+            // 
+            this.btnAutobuffSkill.BackColor = System.Drawing.Color.Gray;
+            this.btnAutobuffSkill.FlatAppearance.BorderSize = 0;
+            this.btnAutobuffSkill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAutobuffSkill.ForeColor = System.Drawing.Color.White;
+            this.btnAutobuffSkill.Location = new System.Drawing.Point(5, 80);
+            this.btnAutobuffSkill.Name = "btnAutobuffSkill";
+            this.btnAutobuffSkill.Size = new System.Drawing.Size(140, 25);
+            this.btnAutobuffSkill.TabIndex = 3;
+            this.btnAutobuffSkill.Text = "Autobuff - Skills";
+            this.btnAutobuffSkill.UseVisualStyleBackColor = false;
+            this.btnAutobuffSkill.Click += new System.EventHandler(this.btnAutobuffSkill_Click);
+            // 
+            // btnAutobuffStuff
+            // 
+            this.btnAutobuffStuff.BackColor = System.Drawing.Color.Gray;
+            this.btnAutobuffStuff.FlatAppearance.BorderSize = 0;
+            this.btnAutobuffStuff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAutobuffStuff.ForeColor = System.Drawing.Color.White;
+            this.btnAutobuffStuff.Location = new System.Drawing.Point(5, 105);
+            this.btnAutobuffStuff.Name = "btnAutobuffStuff";
+            this.btnAutobuffStuff.Size = new System.Drawing.Size(140, 25);
+            this.btnAutobuffStuff.TabIndex = 4;
+            this.btnAutobuffStuff.Text = "Autobuff - Stuffs";
+            this.btnAutobuffStuff.UseVisualStyleBackColor = false;
+            this.btnAutobuffStuff.Click += new System.EventHandler(this.btnAutobuffStuff_Click);
+            // 
+            // btnSkillTimer
+            // 
+            this.btnSkillTimer.BackColor = System.Drawing.Color.Gray;
+            this.btnSkillTimer.FlatAppearance.BorderSize = 0;
+            this.btnSkillTimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSkillTimer.ForeColor = System.Drawing.Color.White;
+            this.btnSkillTimer.Location = new System.Drawing.Point(5, 130);
+            this.btnSkillTimer.Name = "btnSkillTimer";
+            this.btnSkillTimer.Size = new System.Drawing.Size(140, 25);
+            this.btnSkillTimer.TabIndex = 5;
+            this.btnSkillTimer.Text = "Skill timers";
+            this.btnSkillTimer.UseVisualStyleBackColor = false;
+            this.btnSkillTimer.Click += new System.EventHandler(this.btnSkillTimer_Click);
+            // 
+            // btnMacroSwitch
+            // 
+            this.btnMacroSwitch.BackColor = System.Drawing.Color.Gray;
+            this.btnMacroSwitch.FlatAppearance.BorderSize = 0;
+            this.btnMacroSwitch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMacroSwitch.ForeColor = System.Drawing.Color.White;
+            this.btnMacroSwitch.Location = new System.Drawing.Point(5, 155);
+            this.btnMacroSwitch.Name = "btnMacroSwitch";
+            this.btnMacroSwitch.Size = new System.Drawing.Size(140, 25);
+            this.btnMacroSwitch.TabIndex = 6;
+            this.btnMacroSwitch.Text = "Macro Switch";
+            this.btnMacroSwitch.UseVisualStyleBackColor = false;
+            this.btnMacroSwitch.Click += new System.EventHandler(this.btnMacroSwitch_Click);
+            // 
+            // btnMacroSongs
+            // 
+            this.btnMacroSongs.BackColor = System.Drawing.Color.Gray;
+            this.btnMacroSongs.FlatAppearance.BorderSize = 0;
+            this.btnMacroSongs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMacroSongs.ForeColor = System.Drawing.Color.White;
+            this.btnMacroSongs.Location = new System.Drawing.Point(5, 180);
+            this.btnMacroSongs.Name = "btnMacroSongs";
+            this.btnMacroSongs.Size = new System.Drawing.Size(140, 25);
+            this.btnMacroSongs.TabIndex = 7;
+            this.btnMacroSongs.Text = "Macro Songs";
+            this.btnMacroSongs.UseVisualStyleBackColor = false;
+            this.btnMacroSongs.Click += new System.EventHandler(this.btnMacroSongs_Click);
+            // 
+            // btnATKDEF
+            // 
+            this.btnATKDEF.BackColor = System.Drawing.Color.Gray;
+            this.btnATKDEF.FlatAppearance.BorderSize = 0;
+            this.btnATKDEF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnATKDEF.ForeColor = System.Drawing.Color.White;
+            this.btnATKDEF.Location = new System.Drawing.Point(5, 205);
+            this.btnATKDEF.Name = "btnATKDEF";
+            this.btnATKDEF.Size = new System.Drawing.Size(140, 25);
+            this.btnATKDEF.TabIndex = 8;
+            this.btnATKDEF.Text = "ATK x DEF Mode";
+            this.btnATKDEF.UseVisualStyleBackColor = false;
+            this.btnATKDEF.Click += new System.EventHandler(this.btnATKDEF_Click);
+            // 
+            // btnProfiles
+            // 
+            this.btnProfiles.BackColor = System.Drawing.Color.Gray;
+            this.btnProfiles.FlatAppearance.BorderSize = 0;
+            this.btnProfiles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProfiles.ForeColor = System.Drawing.Color.White;
+            this.btnProfiles.Location = new System.Drawing.Point(5, 230);
+            this.btnProfiles.Name = "btnProfiles";
+            this.btnProfiles.Size = new System.Drawing.Size(140, 25);
+            this.btnProfiles.TabIndex = 9;
+            this.btnProfiles.Text = "Profiles";
+            this.btnProfiles.UseVisualStyleBackColor = false;
+            this.btnProfiles.Click += new System.EventHandler(this.btnProfiles_Click);
+            // 
+            // btnServers
+            // 
+            this.btnServers.BackColor = System.Drawing.Color.Gray;
+            this.btnServers.FlatAppearance.BorderSize = 0;
+            this.btnServers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnServers.ForeColor = System.Drawing.Color.White;
+            this.btnServers.Location = new System.Drawing.Point(5, 255);
+            this.btnServers.Name = "btnServers";
+            this.btnServers.Size = new System.Drawing.Size(140, 25);
+            this.btnServers.TabIndex = 10;
+            this.btnServers.Text = "Servers";
+            this.btnServers.UseVisualStyleBackColor = false;
+            this.btnServers.Click += new System.EventHandler(this.btnServers_Click);
             // 
             // tabDebuffRecovery
             // 
@@ -386,6 +560,8 @@ namespace _4RTools.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(609, 624);
+            this.Controls.Add(this.rightContentPanel);
+            this.Controls.Add(this.leftSidebarPanel);
             this.Controls.Add(this.OnOffPanel);
             this.Controls.Add(this.characterName);
             this.Controls.Add(this.lblCharacterName);
@@ -396,7 +572,6 @@ namespace _4RTools.Forms
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.labelProfile);
             this.Controls.Add(this.profileCB);
-            this.Controls.Add(this.atkDefMode);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.lblProcessName);
             this.Controls.Add(this.processCB);
@@ -412,7 +587,7 @@ namespace _4RTools.Forms
             this.panelFooter.ResumeLayout(false);
             this.panelFooter.PerformLayout();
             this.tabControlAutopot.ResumeLayout(false);
-            this.atkDefMode.ResumeLayout(false);
+            this.leftSidebarPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -451,5 +626,18 @@ namespace _4RTools.Forms
         private Panel OnOffPanel;
         private TabPage tabSkillTimer;
         private Label lbPowered;
+        private Panel leftSidebarPanel;
+        private Panel rightContentPanel;
+        private Button btnAutoClick;
+        private Button btnSkillSpammer;
+        private Button btnDebuff;
+        private Button btnAutobuffSkill;
+        private Button btnAutobuffStuff;
+        private Button btnSkillTimer;
+        private Button btnMacroSwitch;
+        private Button btnMacroSongs;
+        private Button btnATKDEF;
+        private Button btnProfiles;
+        private Button btnServers;
     }
 }
