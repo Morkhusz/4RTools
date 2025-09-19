@@ -195,7 +195,7 @@ namespace _4RTools.Forms
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Silver;
-            this.panel5.Location = new System.Drawing.Point(344, 83);
+            this.panel5.Location = new System.Drawing.Point(330, 83);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1, 165);
             this.panel5.TabIndex = 18;
@@ -205,10 +205,10 @@ namespace _4RTools.Forms
             this.tabControlAutopot.Controls.Add(this.tabPageAutopot);
             this.tabControlAutopot.Controls.Add(this.tabPageYggAutopot);
             this.tabControlAutopot.ImageList = this.TabControlImageList;
-            this.tabControlAutopot.Location = new System.Drawing.Point(15, 83);
+            this.tabControlAutopot.Location = new System.Drawing.Point(175, 83);
             this.tabControlAutopot.Name = "tabControlAutopot";
             this.tabControlAutopot.SelectedIndex = 0;
-            this.tabControlAutopot.Size = new System.Drawing.Size(308, 165);
+            this.tabControlAutopot.Size = new System.Drawing.Size(148, 165);
             this.tabControlAutopot.TabIndex = 25;
             // 
             // tabPageAutopot
@@ -216,7 +216,7 @@ namespace _4RTools.Forms
             this.tabPageAutopot.Location = new System.Drawing.Point(4, 22);
             this.tabPageAutopot.Name = "tabPageAutopot";
             this.tabPageAutopot.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAutopot.Size = new System.Drawing.Size(300, 139);
+            this.tabPageAutopot.Size = new System.Drawing.Size(140, 139);
             this.tabPageAutopot.TabIndex = 0;
             this.tabPageAutopot.Text = "Autopot";
             this.tabPageAutopot.UseVisualStyleBackColor = true;
@@ -226,7 +226,7 @@ namespace _4RTools.Forms
             this.tabPageYggAutopot.Location = new System.Drawing.Point(4, 22);
             this.tabPageYggAutopot.Name = "tabPageYggAutopot";
             this.tabPageYggAutopot.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageYggAutopot.Size = new System.Drawing.Size(481, 139);
+            this.tabPageYggAutopot.Size = new System.Drawing.Size(140, 139);
             this.tabPageYggAutopot.TabIndex = 3;
             this.tabPageYggAutopot.Text = "Yggdrasil";
             this.tabPageYggAutopot.UseVisualStyleBackColor = true;
@@ -348,9 +348,9 @@ namespace _4RTools.Forms
             this.leftSidebarPanel.Controls.Add(this.btnDebuff);
             this.leftSidebarPanel.Controls.Add(this.btnSkillSpammer);
             this.leftSidebarPanel.Controls.Add(this.btnAutoClick);
-            this.leftSidebarPanel.Location = new System.Drawing.Point(15, 274);
+            this.leftSidebarPanel.Location = new System.Drawing.Point(15, 83);
             this.leftSidebarPanel.Name = "leftSidebarPanel";
-            this.leftSidebarPanel.Size = new System.Drawing.Size(150, 300);
+            this.leftSidebarPanel.Size = new System.Drawing.Size(150, 491);
             this.leftSidebarPanel.TabIndex = 30;
             // 
             // rightContentPanel
@@ -531,7 +531,7 @@ namespace _4RTools.Forms
             this.characterName.AutoSize = true;
             this.characterName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.characterName.ForeColor = System.Drawing.Color.DarkGreen;
-            this.characterName.Location = new System.Drawing.Point(366, 215);
+            this.characterName.Location = new System.Drawing.Point(335, 215);
             this.characterName.Name = "characterName";
             this.characterName.Size = new System.Drawing.Size(25, 17);
             this.characterName.TabIndex = 28;
@@ -541,7 +541,7 @@ namespace _4RTools.Forms
             // 
             this.lblCharacterName.AutoSize = true;
             this.lblCharacterName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCharacterName.Location = new System.Drawing.Point(366, 198);
+            this.lblCharacterName.Location = new System.Drawing.Point(335, 198);
             this.lblCharacterName.Name = "lblCharacterName";
             this.lblCharacterName.Size = new System.Drawing.Size(115, 17);
             this.lblCharacterName.TabIndex = 27;
@@ -549,7 +549,7 @@ namespace _4RTools.Forms
             // 
             // OnOffPanel
             // 
-            this.OnOffPanel.Location = new System.Drawing.Point(363, 83);
+            this.OnOffPanel.Location = new System.Drawing.Point(335, 83);
             this.OnOffPanel.Name = "OnOffPanel";
             this.OnOffPanel.Size = new System.Drawing.Size(223, 112);
             this.OnOffPanel.TabIndex = 29;
