@@ -32,51 +32,12 @@ namespace _4RTools.Forms
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ToggleApplicationStateForm));
+            this.notifyIconTray = new System.Windows.Forms.NotifyIcon(this.components);
+            this.cbAudio = new System.Windows.Forms.CheckBox();
             this.txtStatusToggleKey = new System.Windows.Forms.TextBox();
             this.btnStatusToggle = new System.Windows.Forms.Button();
             this.lblStatusToggle = new System.Windows.Forms.Label();
-            this.notifyIconTray = new System.Windows.Forms.NotifyIcon(this.components);
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cbAudio = new System.Windows.Forms.CheckBox();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // txtStatusToggleKey
-            // 
-            this.txtStatusToggleKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtStatusToggleKey.Location = new System.Drawing.Point(74, 51);
-            this.txtStatusToggleKey.Name = "txtStatusToggleKey";
-            this.txtStatusToggleKey.Size = new System.Drawing.Size(61, 23);
-            this.txtStatusToggleKey.TabIndex = 23;
-            this.txtStatusToggleKey.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // btnStatusToggle
-            // 
-            this.btnStatusToggle.BackColor = System.Drawing.Color.Red;
-            this.btnStatusToggle.FlatAppearance.BorderSize = 0;
-            this.btnStatusToggle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStatusToggle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStatusToggle.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnStatusToggle.Location = new System.Drawing.Point(68, 17);
-            this.btnStatusToggle.Margin = new System.Windows.Forms.Padding(0);
-            this.btnStatusToggle.Name = "btnStatusToggle";
-            this.btnStatusToggle.Size = new System.Drawing.Size(73, 28);
-            this.btnStatusToggle.TabIndex = 21;
-            this.btnStatusToggle.Text = "OFF";
-            this.btnStatusToggle.UseVisualStyleBackColor = false;
-            this.btnStatusToggle.Click += new System.EventHandler(this.btnToggleStatusHandler);
-            // 
-            // lblStatusToggle
-            // 
-            this.lblStatusToggle.AllowDrop = true;
-            this.lblStatusToggle.AutoSize = true;
-            this.lblStatusToggle.Location = new System.Drawing.Point(57, 80);
-            this.lblStatusToggle.MaximumSize = new System.Drawing.Size(109, 30);
-            this.lblStatusToggle.Name = "lblStatusToggle";
-            this.lblStatusToggle.Size = new System.Drawing.Size(109, 13);
-            this.lblStatusToggle.TabIndex = 22;
-            this.lblStatusToggle.Text = "Press the key to start!";
-            this.lblStatusToggle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // notifyIconTray
             // 
@@ -85,30 +46,53 @@ namespace _4RTools.Forms
             this.notifyIconTray.Visible = true;
             this.notifyIconTray.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIconDoubleClick);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.cbAudio);
-            this.groupBox1.Controls.Add(this.txtStatusToggleKey);
-            this.groupBox1.Controls.Add(this.btnStatusToggle);
-            this.groupBox1.Controls.Add(this.lblStatusToggle);
-            this.groupBox1.Location = new System.Drawing.Point(1, 1);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(222, 110);
-            this.groupBox1.TabIndex = 24;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "ON / OFF";
-            // 
             // cbAudio
             // 
             this.cbAudio.AutoSize = true;
             this.cbAudio.Checked = true;
             this.cbAudio.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbAudio.Location = new System.Drawing.Point(156, 23);
+            this.cbAudio.Location = new System.Drawing.Point(66, 3);
             this.cbAudio.Name = "cbAudio";
             this.cbAudio.Size = new System.Drawing.Size(57, 17);
-            this.cbAudio.TabIndex = 24;
+            this.cbAudio.TabIndex = 28;
             this.cbAudio.Text = "Sound";
             this.cbAudio.UseVisualStyleBackColor = true;
+            // 
+            // txtStatusToggleKey
+            // 
+            this.txtStatusToggleKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtStatusToggleKey.Location = new System.Drawing.Point(64, 39);
+            this.txtStatusToggleKey.Name = "txtStatusToggleKey";
+            this.txtStatusToggleKey.Size = new System.Drawing.Size(61, 23);
+            this.txtStatusToggleKey.TabIndex = 27;
+            this.txtStatusToggleKey.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnStatusToggle
+            // 
+            this.btnStatusToggle.BackColor = System.Drawing.Color.Brown;
+            this.btnStatusToggle.FlatAppearance.BorderSize = 0;
+            this.btnStatusToggle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStatusToggle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStatusToggle.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnStatusToggle.Location = new System.Drawing.Point(128, 0);
+            this.btnStatusToggle.Margin = new System.Windows.Forms.Padding(0);
+            this.btnStatusToggle.Name = "btnStatusToggle";
+            this.btnStatusToggle.Size = new System.Drawing.Size(98, 65);
+            this.btnStatusToggle.TabIndex = 25;
+            this.btnStatusToggle.Text = "OFF";
+            this.btnStatusToggle.UseVisualStyleBackColor = false;
+            // 
+            // lblStatusToggle
+            // 
+            this.lblStatusToggle.AllowDrop = true;
+            this.lblStatusToggle.AutoSize = true;
+            this.lblStatusToggle.Location = new System.Drawing.Point(77, 23);
+            this.lblStatusToggle.MaximumSize = new System.Drawing.Size(109, 30);
+            this.lblStatusToggle.Name = "lblStatusToggle";
+            this.lblStatusToggle.Size = new System.Drawing.Size(34, 13);
+            this.lblStatusToggle.TabIndex = 26;
+            this.lblStatusToggle.Text = "Tecla";
+            this.lblStatusToggle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ToggleApplicationStateForm
             // 
@@ -116,23 +100,24 @@ namespace _4RTools.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(226, 114);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.cbAudio);
+            this.Controls.Add(this.txtStatusToggleKey);
+            this.Controls.Add(this.btnStatusToggle);
+            this.Controls.Add(this.lblStatusToggle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ToggleApplicationStateForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "ToggleApplicationStateForm";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button btnStatusToggle;
-        private System.Windows.Forms.Label lblStatusToggle;
-        private System.Windows.Forms.TextBox txtStatusToggleKey;
         private System.Windows.Forms.NotifyIcon notifyIconTray;
-        private GroupBox groupBox1;
         private CheckBox cbAudio;
+        private TextBox txtStatusToggleKey;
+        private Button btnStatusToggle;
+        private Label lblStatusToggle;
     }
 }

@@ -455,5 +455,40 @@ namespace _4RTools.Forms
         #endregion
 
         #endregion
+
+        private void leftSidebarPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelFooter_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lbPowered_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblProcessName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OnOffPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void characterName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblCharacterName_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

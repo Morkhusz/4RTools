@@ -59,9 +59,9 @@ namespace _4RTools.Forms
             // 
             this.lblCustomPlaceholder.AutoSize = true;
             this.lblCustomPlaceholder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustomPlaceholder.Location = new System.Drawing.Point(50, 20);
+            this.lblCustomPlaceholder.Location = new System.Drawing.Point(52, 69);
             this.lblCustomPlaceholder.Name = "lblCustomPlaceholder";
-            this.lblCustomPlaceholder.Size = new System.Drawing.Size(300, 20);
+            this.lblCustomPlaceholder.Size = new System.Drawing.Size(85, 20);
             this.lblCustomPlaceholder.TabIndex = 0;
             this.lblCustomPlaceholder.Text = "AutoClick";
             // 
@@ -75,7 +75,7 @@ namespace _4RTools.Forms
             this.groupAutoclickLeft.Controls.Add(this.chkAudioFeedbackLeft);
             this.groupAutoclickLeft.Controls.Add(this.lblStatusLeft);
             this.groupAutoclickLeft.Controls.Add(this.btnToggleLeft);
-            this.groupAutoclickLeft.Location = new System.Drawing.Point(50, 60);
+            this.groupAutoclickLeft.Location = new System.Drawing.Point(52, 109);
             this.groupAutoclickLeft.Name = "groupAutoclickLeft";
             this.groupAutoclickLeft.Size = new System.Drawing.Size(250, 160);
             this.groupAutoclickLeft.TabIndex = 1;
@@ -104,7 +104,7 @@ namespace _4RTools.Forms
             this.lblDelayLeft.AutoSize = true;
             this.lblDelayLeft.Location = new System.Drawing.Point(15, 55);
             this.lblDelayLeft.Name = "lblDelayLeft";
-            this.lblDelayLeft.Size = new System.Drawing.Size(65, 13);
+            this.lblDelayLeft.Size = new System.Drawing.Size(63, 13);
             this.lblDelayLeft.TabIndex = 2;
             this.lblDelayLeft.Text = "Click Delay:";
             // 
@@ -146,7 +146,7 @@ namespace _4RTools.Forms
             this.chkAudioFeedbackLeft.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkAudioFeedbackLeft.Location = new System.Drawing.Point(18, 85);
             this.chkAudioFeedbackLeft.Name = "chkAudioFeedbackLeft";
-            this.chkAudioFeedbackLeft.Size = new System.Drawing.Size(99, 17);
+            this.chkAudioFeedbackLeft.Size = new System.Drawing.Size(104, 17);
             this.chkAudioFeedbackLeft.TabIndex = 5;
             this.chkAudioFeedbackLeft.Text = "Audio Feedback";
             this.chkAudioFeedbackLeft.UseVisualStyleBackColor = true;
@@ -158,7 +158,7 @@ namespace _4RTools.Forms
             this.lblStatusLeft.ForeColor = System.Drawing.Color.Red;
             this.lblStatusLeft.Location = new System.Drawing.Point(15, 115);
             this.lblStatusLeft.Name = "lblStatusLeft";
-            this.lblStatusLeft.Size = new System.Drawing.Size(142, 15);
+            this.lblStatusLeft.Size = new System.Drawing.Size(115, 15);
             this.lblStatusLeft.TabIndex = 6;
             this.lblStatusLeft.Text = "Status: INACTIVE";
             // 
@@ -184,7 +184,7 @@ namespace _4RTools.Forms
             this.groupAutoclickRight.Controls.Add(this.chkAudioFeedbackRight);
             this.groupAutoclickRight.Controls.Add(this.lblStatusRight);
             this.groupAutoclickRight.Controls.Add(this.btnToggleRight);
-            this.groupAutoclickRight.Location = new System.Drawing.Point(320, 60);
+            this.groupAutoclickRight.Location = new System.Drawing.Point(322, 109);
             this.groupAutoclickRight.Name = "groupAutoclickRight";
             this.groupAutoclickRight.Size = new System.Drawing.Size(250, 160);
             this.groupAutoclickRight.TabIndex = 2;
@@ -213,7 +213,7 @@ namespace _4RTools.Forms
             this.lblDelayRight.AutoSize = true;
             this.lblDelayRight.Location = new System.Drawing.Point(15, 55);
             this.lblDelayRight.Name = "lblDelayRight";
-            this.lblDelayRight.Size = new System.Drawing.Size(65, 13);
+            this.lblDelayRight.Size = new System.Drawing.Size(63, 13);
             this.lblDelayRight.TabIndex = 2;
             this.lblDelayRight.Text = "Click Delay:";
             // 
@@ -255,7 +255,7 @@ namespace _4RTools.Forms
             this.chkAudioFeedbackRight.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkAudioFeedbackRight.Location = new System.Drawing.Point(18, 85);
             this.chkAudioFeedbackRight.Name = "chkAudioFeedbackRight";
-            this.chkAudioFeedbackRight.Size = new System.Drawing.Size(99, 17);
+            this.chkAudioFeedbackRight.Size = new System.Drawing.Size(104, 17);
             this.chkAudioFeedbackRight.TabIndex = 5;
             this.chkAudioFeedbackRight.Text = "Audio Feedback";
             this.chkAudioFeedbackRight.UseVisualStyleBackColor = true;
@@ -267,7 +267,7 @@ namespace _4RTools.Forms
             this.lblStatusRight.ForeColor = System.Drawing.Color.Red;
             this.lblStatusRight.Location = new System.Drawing.Point(15, 115);
             this.lblStatusRight.Name = "lblStatusRight";
-            this.lblStatusRight.Size = new System.Drawing.Size(142, 15);
+            this.lblStatusRight.Size = new System.Drawing.Size(115, 15);
             this.lblStatusRight.TabIndex = 6;
             this.lblStatusRight.Text = "Status: INACTIVE";
             // 
@@ -287,8 +287,8 @@ namespace _4RTools.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(600, 250);
+            this.BackColor = System.Drawing.Color.Silver;
+            this.ClientSize = new System.Drawing.Size(624, 334);
             this.Controls.Add(this.groupAutoclickRight);
             this.Controls.Add(this.groupAutoclickLeft);
             this.Controls.Add(this.lblCustomPlaceholder);

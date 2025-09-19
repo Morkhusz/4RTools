@@ -83,7 +83,7 @@ namespace _4RTools.Forms
                 this.btnStatusToggle.Text = "OFF";
                 this.notifyIconTray.Icon = Resources._4RTools.ETCResource.logo_4rtools_off;
                 this.subject.Notify(new Utils.Message(MessageCode.TURN_OFF, null));
-                this.lblStatusToggle.Text = "Press the key to start!";
+                this.lblStatusToggle.Text = "Tecla";
 
                 if (this.cbAudio.Checked) { new SoundPlayer(Resources._4RTools.ETCResource.Speech_Off).Play(); }
             }
@@ -92,11 +92,11 @@ namespace _4RTools.Forms
                 Client client = ClientSingleton.GetClient();
                 if (client != null)
                 {
-                    this.btnStatusToggle.BackColor = Color.Green;
+                    this.btnStatusToggle.BackColor = Color.SeaGreen;
                     this.btnStatusToggle.Text = "ON";
                     this.notifyIconTray.Icon = Resources._4RTools.ETCResource.logo_4rtools_on;
                     this.subject.Notify(new Utils.Message(MessageCode.TURN_ON, null));
-                    this.lblStatusToggle.Text = "Press the key to stop!";
+                    this.lblStatusToggle.Text = "Tecla";
                     this.lblStatusToggle.ForeColor = Color.Black;
 
                     if (this.cbAudio.Checked) { new SoundPlayer(Resources._4RTools.ETCResource.Speech_On).Play(); }
@@ -120,6 +120,26 @@ namespace _4RTools.Forms
         {
             // Close the form, which closes the application.
             this.subject.Notify(new Utils.Message(MessageCode.SHUTDOWN_APPLICATION, null));
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblStatusToggle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbAudio_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtStatusToggleKey_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

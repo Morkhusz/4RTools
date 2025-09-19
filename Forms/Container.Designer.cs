@@ -45,7 +45,6 @@ namespace _4RTools.Forms
             this.lbPowered = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.tabControlAutopot = new System.Windows.Forms.TabControl();
             this.tabPageAutopot = new System.Windows.Forms.TabPage();
             this.tabPageYggAutopot = new System.Windows.Forms.TabPage();
@@ -61,18 +60,18 @@ namespace _4RTools.Forms
             this.tabSkillTimer = new System.Windows.Forms.TabPage();
             this.tabDebuffRecovery = new System.Windows.Forms.TabPage();
             this.leftSidebarPanel = new System.Windows.Forms.Panel();
-            this.rightContentPanel = new System.Windows.Forms.Panel();
-            this.btnAutoClick = new System.Windows.Forms.Button();
-            this.btnSkillSpammer = new System.Windows.Forms.Button();
-            this.btnDebuff = new System.Windows.Forms.Button();
-            this.btnAutobuffSkill = new System.Windows.Forms.Button();
-            this.btnAutobuffStuff = new System.Windows.Forms.Button();
-            this.btnSkillTimer = new System.Windows.Forms.Button();
-            this.btnMacroSwitch = new System.Windows.Forms.Button();
-            this.btnMacroSongs = new System.Windows.Forms.Button();
-            this.btnATKDEF = new System.Windows.Forms.Button();
-            this.btnProfiles = new System.Windows.Forms.Button();
             this.btnServers = new System.Windows.Forms.Button();
+            this.btnProfiles = new System.Windows.Forms.Button();
+            this.btnATKDEF = new System.Windows.Forms.Button();
+            this.btnMacroSongs = new System.Windows.Forms.Button();
+            this.btnMacroSwitch = new System.Windows.Forms.Button();
+            this.btnSkillTimer = new System.Windows.Forms.Button();
+            this.btnAutobuffStuff = new System.Windows.Forms.Button();
+            this.btnAutobuffSkill = new System.Windows.Forms.Button();
+            this.btnDebuff = new System.Windows.Forms.Button();
+            this.btnSkillSpammer = new System.Windows.Forms.Button();
+            this.btnAutoClick = new System.Windows.Forms.Button();
+            this.rightContentPanel = new System.Windows.Forms.Panel();
             this.characterName = new System.Windows.Forms.Label();
             this.lblCharacterName = new System.Windows.Forms.Label();
             this.OnOffPanel = new System.Windows.Forms.Panel();
@@ -85,16 +84,17 @@ namespace _4RTools.Forms
             // 
             this.lblProcessName.AutoSize = true;
             this.lblProcessName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblProcessName.Location = new System.Drawing.Point(12, 9);
+            this.lblProcessName.Location = new System.Drawing.Point(42, 10);
             this.lblProcessName.Name = "lblProcessName";
-            this.lblProcessName.Size = new System.Drawing.Size(109, 17);
+            this.lblProcessName.Size = new System.Drawing.Size(43, 17);
             this.lblProcessName.TabIndex = 3;
-            this.lblProcessName.Text = "Ragnarok Client";
+            this.lblProcessName.Text = "Client";
+            this.lblProcessName.Click += new System.EventHandler(this.lblProcessName_Click);
             // 
             // processCB
             // 
             this.processCB.FormattingEnabled = true;
-            this.processCB.Location = new System.Drawing.Point(17, 29);
+            this.processCB.Location = new System.Drawing.Point(16, 30);
             this.processCB.Name = "processCB";
             this.processCB.Size = new System.Drawing.Size(184, 21);
             this.processCB.TabIndex = 2;
@@ -103,7 +103,7 @@ namespace _4RTools.Forms
             // btnRefresh
             // 
             this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
-            this.btnRefresh.Location = new System.Drawing.Point(201, 28);
+            this.btnRefresh.Location = new System.Drawing.Point(200, 29);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(19, 22);
             this.btnRefresh.TabIndex = 5;
@@ -140,16 +140,16 @@ namespace _4RTools.Forms
             // 
             this.labelProfile.AutoSize = true;
             this.labelProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelProfile.Location = new System.Drawing.Point(401, 10);
+            this.labelProfile.Location = new System.Drawing.Point(314, 10);
             this.labelProfile.Name = "labelProfile";
-            this.labelProfile.Size = new System.Drawing.Size(48, 17);
+            this.labelProfile.Size = new System.Drawing.Size(40, 17);
             this.labelProfile.TabIndex = 15;
-            this.labelProfile.Text = "Profile";
+            this.labelProfile.Text = "Perfil";
             // 
             // profileCB
             // 
             this.profileCB.FormattingEnabled = true;
-            this.profileCB.Location = new System.Drawing.Point(405, 30);
+            this.profileCB.Location = new System.Drawing.Point(247, 30);
             this.profileCB.Name = "profileCB";
             this.profileCB.Size = new System.Drawing.Size(181, 21);
             this.profileCB.TabIndex = 14;
@@ -161,27 +161,29 @@ namespace _4RTools.Forms
             this.panelFooter.Controls.Add(this.lbPowered);
             this.panelFooter.Controls.Add(this.lblLinkDiscord);
             this.panelFooter.Controls.Add(this.panelDiscImage);
-            this.panelFooter.Location = new System.Drawing.Point(-3, 580);
+            this.panelFooter.Location = new System.Drawing.Point(12, 724);
             this.panelFooter.Name = "panelFooter";
-            this.panelFooter.Size = new System.Drawing.Size(903, 43);
+            this.panelFooter.Size = new System.Drawing.Size(819, 43);
             this.panelFooter.TabIndex = 16;
+            this.panelFooter.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFooter_Paint);
             // 
             // lbPowered
             // 
             this.lbPowered.AutoSize = true;
             this.lbPowered.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPowered.Location = new System.Drawing.Point(16, 16);
+            this.lbPowered.Location = new System.Drawing.Point(15, 12);
             this.lbPowered.Name = "lbPowered";
-            this.lbPowered.Size = new System.Drawing.Size(181, 13);
+            this.lbPowered.Size = new System.Drawing.Size(107, 13);
             this.lbPowered.TabIndex = 0;
-            this.lbPowered.Text = "Powered by AuTHEntiC and MarkiinG";
+            this.lbPowered.Text = "MineroTools 0.1.0-rc1";
+            this.lbPowered.Click += new System.EventHandler(this.lbPowered_Click);
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Silver;
-            this.panel4.Location = new System.Drawing.Point(16, 66);
+            this.panel4.Location = new System.Drawing.Point(3, 66);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(568, 1);
+            this.panel4.Size = new System.Drawing.Size(888, 1);
             this.panel4.TabIndex = 17;
             // 
             // label1
@@ -192,23 +194,15 @@ namespace _4RTools.Forms
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 18;
             // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.Silver;
-            this.panel5.Location = new System.Drawing.Point(330, 83);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1, 165);
-            this.panel5.TabIndex = 18;
-            // 
             // tabControlAutopot
             // 
             this.tabControlAutopot.Controls.Add(this.tabPageAutopot);
             this.tabControlAutopot.Controls.Add(this.tabPageYggAutopot);
             this.tabControlAutopot.ImageList = this.TabControlImageList;
-            this.tabControlAutopot.Location = new System.Drawing.Point(175, 83);
+            this.tabControlAutopot.Location = new System.Drawing.Point(247, 83);
             this.tabControlAutopot.Name = "tabControlAutopot";
             this.tabControlAutopot.SelectedIndex = 0;
-            this.tabControlAutopot.Size = new System.Drawing.Size(148, 165);
+            this.tabControlAutopot.Size = new System.Drawing.Size(267, 165);
             this.tabControlAutopot.TabIndex = 25;
             // 
             // tabPageAutopot
@@ -216,7 +210,7 @@ namespace _4RTools.Forms
             this.tabPageAutopot.Location = new System.Drawing.Point(4, 22);
             this.tabPageAutopot.Name = "tabPageAutopot";
             this.tabPageAutopot.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAutopot.Size = new System.Drawing.Size(140, 139);
+            this.tabPageAutopot.Size = new System.Drawing.Size(259, 139);
             this.tabPageAutopot.TabIndex = 0;
             this.tabPageAutopot.Text = "Autopot";
             this.tabPageAutopot.UseVisualStyleBackColor = true;
@@ -226,7 +220,7 @@ namespace _4RTools.Forms
             this.tabPageYggAutopot.Location = new System.Drawing.Point(4, 22);
             this.tabPageYggAutopot.Name = "tabPageYggAutopot";
             this.tabPageYggAutopot.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageYggAutopot.Size = new System.Drawing.Size(140, 139);
+            this.tabPageYggAutopot.Size = new System.Drawing.Size(259, 139);
             this.tabPageYggAutopot.TabIndex = 3;
             this.tabPageYggAutopot.Text = "Yggdrasil";
             this.tabPageYggAutopot.UseVisualStyleBackColor = true;
@@ -334,9 +328,20 @@ namespace _4RTools.Forms
             this.tabSkillTimer.Text = "Skill timers";
             this.tabSkillTimer.UseVisualStyleBackColor = true;
             // 
+            // tabDebuffRecovery
+            // 
+            this.tabDebuffRecovery.ImageIndex = 0;
+            this.tabDebuffRecovery.Location = new System.Drawing.Point(4, 22);
+            this.tabDebuffRecovery.Name = "tabDebuffRecovery";
+            this.tabDebuffRecovery.Padding = new System.Windows.Forms.Padding(3);
+            this.tabDebuffRecovery.Size = new System.Drawing.Size(865, 274);
+            this.tabDebuffRecovery.TabIndex = 2;
+            this.tabDebuffRecovery.Text = "Debuff";
+            this.tabDebuffRecovery.UseVisualStyleBackColor = true;
+            // 
             // leftSidebarPanel
             // 
-            this.leftSidebarPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.leftSidebarPanel.BackColor = System.Drawing.Color.Maroon;
             this.leftSidebarPanel.Controls.Add(this.btnServers);
             this.leftSidebarPanel.Controls.Add(this.btnProfiles);
             this.leftSidebarPanel.Controls.Add(this.btnATKDEF);
@@ -350,156 +355,9 @@ namespace _4RTools.Forms
             this.leftSidebarPanel.Controls.Add(this.btnAutoClick);
             this.leftSidebarPanel.Location = new System.Drawing.Point(15, 83);
             this.leftSidebarPanel.Name = "leftSidebarPanel";
-            this.leftSidebarPanel.Size = new System.Drawing.Size(150, 491);
+            this.leftSidebarPanel.Size = new System.Drawing.Size(205, 525);
             this.leftSidebarPanel.TabIndex = 30;
-            // 
-            // rightContentPanel
-            // 
-            this.rightContentPanel.BackColor = System.Drawing.Color.White;
-            this.rightContentPanel.Location = new System.Drawing.Point(175, 274);
-            this.rightContentPanel.Name = "rightContentPanel";
-            this.rightContentPanel.Size = new System.Drawing.Size(411, 300);
-            this.rightContentPanel.TabIndex = 31;
-            // 
-            // btnAutoClick
-            // 
-            this.btnAutoClick.BackColor = System.Drawing.Color.Gray;
-            this.btnAutoClick.FlatAppearance.BorderSize = 0;
-            this.btnAutoClick.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAutoClick.ForeColor = System.Drawing.Color.White;
-            this.btnAutoClick.Location = new System.Drawing.Point(5, 5);
-            this.btnAutoClick.Name = "btnAutoClick";
-            this.btnAutoClick.Size = new System.Drawing.Size(140, 25);
-            this.btnAutoClick.TabIndex = 0;
-            this.btnAutoClick.Text = "AutoClick";
-            this.btnAutoClick.UseVisualStyleBackColor = false;
-            this.btnAutoClick.Click += new System.EventHandler(this.btnAutoClick_Click);
-            // 
-            // btnSkillSpammer
-            // 
-            this.btnSkillSpammer.BackColor = System.Drawing.Color.Gray;
-            this.btnSkillSpammer.FlatAppearance.BorderSize = 0;
-            this.btnSkillSpammer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSkillSpammer.ForeColor = System.Drawing.Color.White;
-            this.btnSkillSpammer.Location = new System.Drawing.Point(5, 30);
-            this.btnSkillSpammer.Name = "btnSkillSpammer";
-            this.btnSkillSpammer.Size = new System.Drawing.Size(140, 25);
-            this.btnSkillSpammer.TabIndex = 1;
-            this.btnSkillSpammer.Text = "Skill Spammer";
-            this.btnSkillSpammer.UseVisualStyleBackColor = false;
-            this.btnSkillSpammer.Click += new System.EventHandler(this.btnSkillSpammer_Click);
-            // 
-            // btnDebuff
-            // 
-            this.btnDebuff.BackColor = System.Drawing.Color.Gray;
-            this.btnDebuff.FlatAppearance.BorderSize = 0;
-            this.btnDebuff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDebuff.ForeColor = System.Drawing.Color.White;
-            this.btnDebuff.Location = new System.Drawing.Point(5, 55);
-            this.btnDebuff.Name = "btnDebuff";
-            this.btnDebuff.Size = new System.Drawing.Size(140, 25);
-            this.btnDebuff.TabIndex = 2;
-            this.btnDebuff.Text = "Debuff";
-            this.btnDebuff.UseVisualStyleBackColor = false;
-            this.btnDebuff.Click += new System.EventHandler(this.btnDebuff_Click);
-            // 
-            // btnAutobuffSkill
-            // 
-            this.btnAutobuffSkill.BackColor = System.Drawing.Color.Gray;
-            this.btnAutobuffSkill.FlatAppearance.BorderSize = 0;
-            this.btnAutobuffSkill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAutobuffSkill.ForeColor = System.Drawing.Color.White;
-            this.btnAutobuffSkill.Location = new System.Drawing.Point(5, 80);
-            this.btnAutobuffSkill.Name = "btnAutobuffSkill";
-            this.btnAutobuffSkill.Size = new System.Drawing.Size(140, 25);
-            this.btnAutobuffSkill.TabIndex = 3;
-            this.btnAutobuffSkill.Text = "Autobuff - Skills";
-            this.btnAutobuffSkill.UseVisualStyleBackColor = false;
-            this.btnAutobuffSkill.Click += new System.EventHandler(this.btnAutobuffSkill_Click);
-            // 
-            // btnAutobuffStuff
-            // 
-            this.btnAutobuffStuff.BackColor = System.Drawing.Color.Gray;
-            this.btnAutobuffStuff.FlatAppearance.BorderSize = 0;
-            this.btnAutobuffStuff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAutobuffStuff.ForeColor = System.Drawing.Color.White;
-            this.btnAutobuffStuff.Location = new System.Drawing.Point(5, 105);
-            this.btnAutobuffStuff.Name = "btnAutobuffStuff";
-            this.btnAutobuffStuff.Size = new System.Drawing.Size(140, 25);
-            this.btnAutobuffStuff.TabIndex = 4;
-            this.btnAutobuffStuff.Text = "Autobuff - Stuffs";
-            this.btnAutobuffStuff.UseVisualStyleBackColor = false;
-            this.btnAutobuffStuff.Click += new System.EventHandler(this.btnAutobuffStuff_Click);
-            // 
-            // btnSkillTimer
-            // 
-            this.btnSkillTimer.BackColor = System.Drawing.Color.Gray;
-            this.btnSkillTimer.FlatAppearance.BorderSize = 0;
-            this.btnSkillTimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSkillTimer.ForeColor = System.Drawing.Color.White;
-            this.btnSkillTimer.Location = new System.Drawing.Point(5, 130);
-            this.btnSkillTimer.Name = "btnSkillTimer";
-            this.btnSkillTimer.Size = new System.Drawing.Size(140, 25);
-            this.btnSkillTimer.TabIndex = 5;
-            this.btnSkillTimer.Text = "Skill timers";
-            this.btnSkillTimer.UseVisualStyleBackColor = false;
-            this.btnSkillTimer.Click += new System.EventHandler(this.btnSkillTimer_Click);
-            // 
-            // btnMacroSwitch
-            // 
-            this.btnMacroSwitch.BackColor = System.Drawing.Color.Gray;
-            this.btnMacroSwitch.FlatAppearance.BorderSize = 0;
-            this.btnMacroSwitch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMacroSwitch.ForeColor = System.Drawing.Color.White;
-            this.btnMacroSwitch.Location = new System.Drawing.Point(5, 155);
-            this.btnMacroSwitch.Name = "btnMacroSwitch";
-            this.btnMacroSwitch.Size = new System.Drawing.Size(140, 25);
-            this.btnMacroSwitch.TabIndex = 6;
-            this.btnMacroSwitch.Text = "Macro Switch";
-            this.btnMacroSwitch.UseVisualStyleBackColor = false;
-            this.btnMacroSwitch.Click += new System.EventHandler(this.btnMacroSwitch_Click);
-            // 
-            // btnMacroSongs
-            // 
-            this.btnMacroSongs.BackColor = System.Drawing.Color.Gray;
-            this.btnMacroSongs.FlatAppearance.BorderSize = 0;
-            this.btnMacroSongs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMacroSongs.ForeColor = System.Drawing.Color.White;
-            this.btnMacroSongs.Location = new System.Drawing.Point(5, 180);
-            this.btnMacroSongs.Name = "btnMacroSongs";
-            this.btnMacroSongs.Size = new System.Drawing.Size(140, 25);
-            this.btnMacroSongs.TabIndex = 7;
-            this.btnMacroSongs.Text = "Macro Songs";
-            this.btnMacroSongs.UseVisualStyleBackColor = false;
-            this.btnMacroSongs.Click += new System.EventHandler(this.btnMacroSongs_Click);
-            // 
-            // btnATKDEF
-            // 
-            this.btnATKDEF.BackColor = System.Drawing.Color.Gray;
-            this.btnATKDEF.FlatAppearance.BorderSize = 0;
-            this.btnATKDEF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnATKDEF.ForeColor = System.Drawing.Color.White;
-            this.btnATKDEF.Location = new System.Drawing.Point(5, 205);
-            this.btnATKDEF.Name = "btnATKDEF";
-            this.btnATKDEF.Size = new System.Drawing.Size(140, 25);
-            this.btnATKDEF.TabIndex = 8;
-            this.btnATKDEF.Text = "ATK x DEF Mode";
-            this.btnATKDEF.UseVisualStyleBackColor = false;
-            this.btnATKDEF.Click += new System.EventHandler(this.btnATKDEF_Click);
-            // 
-            // btnProfiles
-            // 
-            this.btnProfiles.BackColor = System.Drawing.Color.Gray;
-            this.btnProfiles.FlatAppearance.BorderSize = 0;
-            this.btnProfiles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProfiles.ForeColor = System.Drawing.Color.White;
-            this.btnProfiles.Location = new System.Drawing.Point(5, 230);
-            this.btnProfiles.Name = "btnProfiles";
-            this.btnProfiles.Size = new System.Drawing.Size(140, 25);
-            this.btnProfiles.TabIndex = 9;
-            this.btnProfiles.Text = "Profiles";
-            this.btnProfiles.UseVisualStyleBackColor = false;
-            this.btnProfiles.Click += new System.EventHandler(this.btnProfiles_Click);
+            this.leftSidebarPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.leftSidebarPanel_Paint);
             // 
             // btnServers
             // 
@@ -507,59 +365,199 @@ namespace _4RTools.Forms
             this.btnServers.FlatAppearance.BorderSize = 0;
             this.btnServers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnServers.ForeColor = System.Drawing.Color.White;
-            this.btnServers.Location = new System.Drawing.Point(5, 255);
+            this.btnServers.Location = new System.Drawing.Point(11, 471);
             this.btnServers.Name = "btnServers";
-            this.btnServers.Size = new System.Drawing.Size(140, 25);
+            this.btnServers.Size = new System.Drawing.Size(182, 40);
             this.btnServers.TabIndex = 10;
             this.btnServers.Text = "Servers";
             this.btnServers.UseVisualStyleBackColor = false;
             this.btnServers.Click += new System.EventHandler(this.btnServers_Click);
             // 
-            // tabDebuffRecovery
+            // btnProfiles
             // 
-            this.tabDebuffRecovery.ImageIndex = 0;
-            this.tabDebuffRecovery.Location = new System.Drawing.Point(4, 22);
-            this.tabDebuffRecovery.Name = "tabDebuffRecovery";
-            this.tabDebuffRecovery.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDebuffRecovery.Size = new System.Drawing.Size(865, 274);
-            this.tabDebuffRecovery.TabIndex = 2;
-            this.tabDebuffRecovery.Text = "Debuff";
-            this.tabDebuffRecovery.UseVisualStyleBackColor = true;
+            this.btnProfiles.BackColor = System.Drawing.Color.Gray;
+            this.btnProfiles.FlatAppearance.BorderSize = 0;
+            this.btnProfiles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProfiles.ForeColor = System.Drawing.Color.White;
+            this.btnProfiles.Location = new System.Drawing.Point(11, 425);
+            this.btnProfiles.Name = "btnProfiles";
+            this.btnProfiles.Size = new System.Drawing.Size(182, 40);
+            this.btnProfiles.TabIndex = 9;
+            this.btnProfiles.Text = "Profiles";
+            this.btnProfiles.UseVisualStyleBackColor = false;
+            this.btnProfiles.Click += new System.EventHandler(this.btnProfiles_Click);
+            // 
+            // btnATKDEF
+            // 
+            this.btnATKDEF.BackColor = System.Drawing.Color.Gray;
+            this.btnATKDEF.FlatAppearance.BorderSize = 0;
+            this.btnATKDEF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnATKDEF.ForeColor = System.Drawing.Color.White;
+            this.btnATKDEF.Location = new System.Drawing.Point(11, 379);
+            this.btnATKDEF.Name = "btnATKDEF";
+            this.btnATKDEF.Size = new System.Drawing.Size(182, 40);
+            this.btnATKDEF.TabIndex = 8;
+            this.btnATKDEF.Text = "ATK x DEF Mode";
+            this.btnATKDEF.UseVisualStyleBackColor = false;
+            this.btnATKDEF.Click += new System.EventHandler(this.btnATKDEF_Click);
+            // 
+            // btnMacroSongs
+            // 
+            this.btnMacroSongs.BackColor = System.Drawing.Color.Gray;
+            this.btnMacroSongs.FlatAppearance.BorderSize = 0;
+            this.btnMacroSongs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMacroSongs.ForeColor = System.Drawing.Color.White;
+            this.btnMacroSongs.Location = new System.Drawing.Point(11, 333);
+            this.btnMacroSongs.Name = "btnMacroSongs";
+            this.btnMacroSongs.Size = new System.Drawing.Size(182, 40);
+            this.btnMacroSongs.TabIndex = 7;
+            this.btnMacroSongs.Text = "Macro Songs";
+            this.btnMacroSongs.UseVisualStyleBackColor = false;
+            this.btnMacroSongs.Click += new System.EventHandler(this.btnMacroSongs_Click);
+            // 
+            // btnMacroSwitch
+            // 
+            this.btnMacroSwitch.BackColor = System.Drawing.Color.Gray;
+            this.btnMacroSwitch.FlatAppearance.BorderSize = 0;
+            this.btnMacroSwitch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMacroSwitch.ForeColor = System.Drawing.Color.White;
+            this.btnMacroSwitch.Location = new System.Drawing.Point(11, 287);
+            this.btnMacroSwitch.Name = "btnMacroSwitch";
+            this.btnMacroSwitch.Size = new System.Drawing.Size(182, 40);
+            this.btnMacroSwitch.TabIndex = 6;
+            this.btnMacroSwitch.Text = "Macro Switch";
+            this.btnMacroSwitch.UseVisualStyleBackColor = false;
+            this.btnMacroSwitch.Click += new System.EventHandler(this.btnMacroSwitch_Click);
+            // 
+            // btnSkillTimer
+            // 
+            this.btnSkillTimer.BackColor = System.Drawing.Color.Gray;
+            this.btnSkillTimer.FlatAppearance.BorderSize = 0;
+            this.btnSkillTimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSkillTimer.ForeColor = System.Drawing.Color.White;
+            this.btnSkillTimer.Location = new System.Drawing.Point(11, 241);
+            this.btnSkillTimer.Name = "btnSkillTimer";
+            this.btnSkillTimer.Size = new System.Drawing.Size(182, 40);
+            this.btnSkillTimer.TabIndex = 5;
+            this.btnSkillTimer.Text = "Skill timers";
+            this.btnSkillTimer.UseVisualStyleBackColor = false;
+            this.btnSkillTimer.Click += new System.EventHandler(this.btnSkillTimer_Click);
+            // 
+            // btnAutobuffStuff
+            // 
+            this.btnAutobuffStuff.BackColor = System.Drawing.Color.Gray;
+            this.btnAutobuffStuff.FlatAppearance.BorderSize = 0;
+            this.btnAutobuffStuff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAutobuffStuff.ForeColor = System.Drawing.Color.White;
+            this.btnAutobuffStuff.Location = new System.Drawing.Point(11, 195);
+            this.btnAutobuffStuff.Name = "btnAutobuffStuff";
+            this.btnAutobuffStuff.Size = new System.Drawing.Size(182, 40);
+            this.btnAutobuffStuff.TabIndex = 4;
+            this.btnAutobuffStuff.Text = "Autobuff - Stuffs";
+            this.btnAutobuffStuff.UseVisualStyleBackColor = false;
+            this.btnAutobuffStuff.Click += new System.EventHandler(this.btnAutobuffStuff_Click);
+            // 
+            // btnAutobuffSkill
+            // 
+            this.btnAutobuffSkill.BackColor = System.Drawing.Color.Gray;
+            this.btnAutobuffSkill.FlatAppearance.BorderSize = 0;
+            this.btnAutobuffSkill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAutobuffSkill.ForeColor = System.Drawing.Color.White;
+            this.btnAutobuffSkill.Location = new System.Drawing.Point(11, 149);
+            this.btnAutobuffSkill.Name = "btnAutobuffSkill";
+            this.btnAutobuffSkill.Size = new System.Drawing.Size(182, 40);
+            this.btnAutobuffSkill.TabIndex = 3;
+            this.btnAutobuffSkill.Text = "Autobuff - Skills";
+            this.btnAutobuffSkill.UseVisualStyleBackColor = false;
+            this.btnAutobuffSkill.Click += new System.EventHandler(this.btnAutobuffSkill_Click);
+            // 
+            // btnDebuff
+            // 
+            this.btnDebuff.BackColor = System.Drawing.Color.Gray;
+            this.btnDebuff.FlatAppearance.BorderSize = 0;
+            this.btnDebuff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDebuff.ForeColor = System.Drawing.Color.White;
+            this.btnDebuff.Location = new System.Drawing.Point(11, 103);
+            this.btnDebuff.Name = "btnDebuff";
+            this.btnDebuff.Size = new System.Drawing.Size(182, 40);
+            this.btnDebuff.TabIndex = 2;
+            this.btnDebuff.Text = "Debuff";
+            this.btnDebuff.UseVisualStyleBackColor = false;
+            this.btnDebuff.Click += new System.EventHandler(this.btnDebuff_Click);
+            // 
+            // btnSkillSpammer
+            // 
+            this.btnSkillSpammer.BackColor = System.Drawing.Color.Gray;
+            this.btnSkillSpammer.FlatAppearance.BorderSize = 0;
+            this.btnSkillSpammer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSkillSpammer.ForeColor = System.Drawing.Color.White;
+            this.btnSkillSpammer.Location = new System.Drawing.Point(11, 57);
+            this.btnSkillSpammer.Name = "btnSkillSpammer";
+            this.btnSkillSpammer.Size = new System.Drawing.Size(182, 40);
+            this.btnSkillSpammer.TabIndex = 1;
+            this.btnSkillSpammer.Text = "Skill Spammer";
+            this.btnSkillSpammer.UseVisualStyleBackColor = false;
+            this.btnSkillSpammer.Click += new System.EventHandler(this.btnSkillSpammer_Click);
+            // 
+            // btnAutoClick
+            // 
+            this.btnAutoClick.BackColor = System.Drawing.Color.Gray;
+            this.btnAutoClick.FlatAppearance.BorderSize = 0;
+            this.btnAutoClick.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAutoClick.ForeColor = System.Drawing.Color.White;
+            this.btnAutoClick.Location = new System.Drawing.Point(11, 11);
+            this.btnAutoClick.Name = "btnAutoClick";
+            this.btnAutoClick.Size = new System.Drawing.Size(182, 40);
+            this.btnAutoClick.TabIndex = 0;
+            this.btnAutoClick.Text = "AutoClick";
+            this.btnAutoClick.UseVisualStyleBackColor = false;
+            this.btnAutoClick.Click += new System.EventHandler(this.btnAutoClick_Click);
+            // 
+            // rightContentPanel
+            // 
+            this.rightContentPanel.BackColor = System.Drawing.Color.White;
+            this.rightContentPanel.Location = new System.Drawing.Point(247, 274);
+            this.rightContentPanel.Name = "rightContentPanel";
+            this.rightContentPanel.Size = new System.Drawing.Size(635, 334);
+            this.rightContentPanel.TabIndex = 31;
             // 
             // characterName
             // 
             this.characterName.AutoSize = true;
             this.characterName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.characterName.ForeColor = System.Drawing.Color.DarkGreen;
-            this.characterName.Location = new System.Drawing.Point(335, 215);
+            this.characterName.Location = new System.Drawing.Point(445, 32);
             this.characterName.Name = "characterName";
             this.characterName.Size = new System.Drawing.Size(25, 17);
             this.characterName.TabIndex = 28;
             this.characterName.Text = "- -";
+            this.characterName.Click += new System.EventHandler(this.characterName_Click);
             // 
             // lblCharacterName
             // 
             this.lblCharacterName.AutoSize = true;
             this.lblCharacterName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCharacterName.Location = new System.Drawing.Point(335, 198);
+            this.lblCharacterName.Location = new System.Drawing.Point(445, 10);
             this.lblCharacterName.Name = "lblCharacterName";
-            this.lblCharacterName.Size = new System.Drawing.Size(115, 17);
+            this.lblCharacterName.Size = new System.Drawing.Size(94, 17);
             this.lblCharacterName.TabIndex = 27;
-            this.lblCharacterName.Text = "Character Name:";
+            this.lblCharacterName.Text = "Char Logado:";
+            this.lblCharacterName.Click += new System.EventHandler(this.lblCharacterName_Click);
             // 
             // OnOffPanel
             // 
-            this.OnOffPanel.Location = new System.Drawing.Point(335, 83);
+            this.OnOffPanel.Location = new System.Drawing.Point(669, 0);
             this.OnOffPanel.Name = "OnOffPanel";
-            this.OnOffPanel.Size = new System.Drawing.Size(223, 112);
+            this.OnOffPanel.Size = new System.Drawing.Size(223, 64);
             this.OnOffPanel.TabIndex = 29;
+            this.OnOffPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.OnOffPanel_Paint);
             // 
             // Container
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(609, 624);
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(894, 770);
             this.Controls.Add(this.rightContentPanel);
             this.Controls.Add(this.leftSidebarPanel);
             this.Controls.Add(this.OnOffPanel);
@@ -567,7 +565,6 @@ namespace _4RTools.Forms
             this.Controls.Add(this.lblCharacterName);
             this.Controls.Add(this.tabControlAutopot);
             this.Controls.Add(this.panelFooter);
-            this.Controls.Add(this.panel5);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.labelProfile);
@@ -605,7 +602,6 @@ namespace _4RTools.Forms
         private System.Windows.Forms.Panel panelFooter;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label1;
-        private Panel panel5;
         private TabControl tabControlAutopot;
         private TabPage tabPageAutopot;
         private TabPage tabPageYggAutopot;
