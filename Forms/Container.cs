@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
+using System.Collections.Generic;
 using _4RTools.Model;
 using _4RTools.Utils;
 
@@ -13,6 +14,10 @@ namespace _4RTools.Forms
 
         private Subject subject = new Subject();
         private string currentProfile;
+
+        // Cache para manter instâncias dos forms do painel direito e preservar estado UI
+        private readonly Dictionary<string, Form> cachedRightForms = new Dictionary<string, Form>();
+
         public Container()
         {
             this.subject.Attach(this);
@@ -82,15 +87,41 @@ namespace _4RTools.Forms
             // Clear the existing content
             this.rightContentPanel.Controls.Clear();
             
-            // Add the new form
+            // Add the new form (preserve instance passed so state stays)
             f.TopLevel = false;
             f.FormBorderStyle = FormBorderStyle.None;
             f.Dock = DockStyle.Fill;
             this.rightContentPanel.Controls.Add(f);
             f.Show();
             
-            // Reset all button styles
-            ResetButtonStyles();
+            // OBS: Não resetar os estilos dos botões aqui — isso sobrescrevia o botão ativo
+            // ResetButtonStyles();
+        }
+
+        // Retorna instância em cache ou cria nova usando fábrica fornecida
+        private Form GetOrCreateRightForm(string key, Func<Form> factory)
+        {
+            try
+            {
+                if (cachedRightForms.ContainsKey(key))
+                {
+                    var existing = cachedRightForms[key];
+                    if (existing != null && !existing.IsDisposed) return existing;
+                    // Se estiver disposed remove e recrie
+                    cachedRightForms.Remove(key);
+                }
+
+                var created = factory();
+                cachedRightForms[key] = created;
+                return created;
+            }
+            catch
+            {
+                // Em caso de erro, tenta criar direto
+                var created = factory();
+                cachedRightForms[key] = created;
+                return created;
+            }
         }
 
         private void ResetButtonStyles()
@@ -394,78 +425,78 @@ namespace _4RTools.Forms
         
         private void btnAutoClick_Click(object sender, EventArgs e)
         {
+            var frm = GetOrCreateRightForm(typeof(CustomForm).FullName, () => new CustomForm(subject));
             SetActiveButton(this.btnAutoClick);
-            CustomForm frm = new CustomForm(subject);
             addformToPanel(frm);
         }
 
         private void btnSkillSpammer_Click(object sender, EventArgs e)
         {
+            var frm = GetOrCreateRightForm(typeof(AHKForm).FullName, () => new AHKForm(subject));
             SetActiveButton(this.btnSkillSpammer);
-            AHKForm frm = new AHKForm(subject);
             addformToPanel(frm);
         }
 
         private void btnDebuff_Click(object sender, EventArgs e)
         {
+            var frm = GetOrCreateRightForm(typeof(DebuffRecoveryForm).FullName, () => new DebuffRecoveryForm(subject));
             SetActiveButton(this.btnDebuff);
-            DebuffRecoveryForm frm = new DebuffRecoveryForm(subject);
             addformToPanel(frm);
         }
 
         private void btnAutobuffSkill_Click(object sender, EventArgs e)
         {
+            var frm = GetOrCreateRightForm(typeof(SkillAutoBuffForm).FullName, () => new SkillAutoBuffForm(subject));
             SetActiveButton(this.btnAutobuffSkill);
-            SkillAutoBuffForm frm = new SkillAutoBuffForm(subject);
             addformToPanel(frm);
         }
 
         private void btnAutobuffStuff_Click(object sender, EventArgs e)
         {
+            var frm = GetOrCreateRightForm(typeof(StuffAutoBuffForm).FullName, () => new StuffAutoBuffForm(subject));
             SetActiveButton(this.btnAutobuffStuff);
-            StuffAutoBuffForm frm = new StuffAutoBuffForm(subject);
             addformToPanel(frm);
         }
 
         private void btnSkillTimer_Click(object sender, EventArgs e)
         {
+            var frm = GetOrCreateRightForm(typeof(SkillTimerForm).FullName, () => new SkillTimerForm(subject));
             SetActiveButton(this.btnSkillTimer);
-            SkillTimerForm frm = new SkillTimerForm(subject);
             addformToPanel(frm);
         }
 
         private void btnMacroSwitch_Click(object sender, EventArgs e)
         {
+            var frm = GetOrCreateRightForm(typeof(MacroSwitchForm).FullName, () => new MacroSwitchForm(subject));
             SetActiveButton(this.btnMacroSwitch);
-            MacroSwitchForm frm = new MacroSwitchForm(subject);
             addformToPanel(frm);
         }
 
         private void btnMacroSongs_Click(object sender, EventArgs e)
         {
+            var frm = GetOrCreateRightForm(typeof(MacroSongForm).FullName, () => new MacroSongForm(subject));
             SetActiveButton(this.btnMacroSongs);
-            MacroSongForm frm = new MacroSongForm(subject);
             addformToPanel(frm);
         }
 
         private void btnATKDEF_Click(object sender, EventArgs e)
         {
+            var frm = GetOrCreateRightForm(typeof(ATKDEFForm).FullName, () => new ATKDEFForm(subject));
             SetActiveButton(this.btnATKDEF);
-            ATKDEFForm frm = new ATKDEFForm(subject);
             addformToPanel(frm);
         }
 
         private void btnProfiles_Click(object sender, EventArgs e)
         {
+            var frm = GetOrCreateRightForm(typeof(ProfileForm).FullName, () => new ProfileForm(this));
             SetActiveButton(this.btnProfiles);
-            ProfileForm frm = new ProfileForm(this);
             addformToPanel(frm);
         }
 
         private void btnServers_Click(object sender, EventArgs e)
         {
+            var frm = GetOrCreateRightForm(typeof(ServersForm).FullName, () => new ServersForm(subject));
             SetActiveButton(this.btnServers);
-            ServersForm frm = new ServersForm(subject);
             addformToPanel(frm);
         }
 
